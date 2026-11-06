@@ -11,7 +11,7 @@ Ouvrir `index.html` directement dans un navigateur, ou lancer `npm start`, puis 
 - `index.html` : accueil, thème et disposition Sauvaje.
 - `amenager-mon-jardin.html` : même contenu que l’accueil, comme demandé.
 - `realisations.html` : structure Paysage M, 4 exemples affichés directement sans filtres, 2 photos par projet, diaporama indépendant et visionneuse.
-- `devis.html` : grande photo de jardin avec titre superposé, présentation et champs du formulaire Sauvaje adaptés aux coordonnées de Greenouala.
+- `devis.html` : grande photo de jardin avec titre superposé et formulaire simplifié, avec neuf prestations et envoi par WhatsApp.
 - `contact.html` : grande photo de patio végétalisé avec titre superposé, téléphone, WhatsApp, formulaire de message, adresse et carte.
 
 Toutes les pages partagent la barre flottante, le menu latéral avec Instagram/Facebook/WhatsApp, un pied de page minimaliste et les boutons flottants WhatsApp/retour en haut.
@@ -34,15 +34,13 @@ Après une modification de contenu ou de structure, lancer `npm run build`. Pour
 
 ## Fonctionnement des formulaires
 
-Les champs sont validés dans le navigateur. La société n’est obligatoire que pour les clients professionnels.
+Les champs sont validés dans le navigateur.
 
-**Devis :** le formulaire utilise un POST natif vers FormSubmit pour envoyer les informations à **salaheddinehafidi@gmail.com**. Le destinataire se configure avec `quoteEmail` dans `data/site.json`. Le sujet est « Nouvelle demande de devis — Verdesia » et les informations sont présentées en tableau. Le service gère la confirmation après l’envoi et sa protection antispam.
-
-**Activation nécessaire :** lors de la première utilisation, FormSubmit adresse un email de confirmation à cette boîte. Le propriétaire doit cliquer sur le lien reçu pour activer la réception. Les vérifications du projet ne déclenchent aucun email réel. Voir la [documentation officielle](https://formsubmit.co/) et [l’aide à l’activation](https://formsubmit.co/help). Utiliser l’aperçu HTTP (`npm start`) plutôt que l’ouverture directe du fichier pour l’envoi.
+**Devis :** seuls le nom, le prénom, la ville, le téléphone et la prestation sont obligatoires. L’adresse email et la description sont facultatives. Le choix de prestation comprend les neuf services transmis par le client. Un récapitulatif prépare le message pour WhatsApp au **+212 660 273737** ; le visiteur doit encore appuyer sur Envoyer dans WhatsApp. Les champs facultatifs vides sont omis du message. L’envoi par email a été retiré.
 
 **Contact :** le message reste présenté dans une fenêtre de vérification avant d’ouvrir WhatsApp au **+212 660 273737** ; le visiteur doit encore appuyer sur Envoyer dans WhatsApp.
 
-Aucune demande n’est envoyée à Sauvaje et aucune coordonnée personnelle n’est conservée sur ce site. Les demandes de devis sont traitées par FormSubmit pour leur acheminement par email.
+Aucune demande n’est envoyée à Sauvaje et aucune coordonnée personnelle n’est conservée sur ce site. Les vérifications utilisent des données fictives et ne transmettent aucun message.
 
 ## Localisation vérifiée
 

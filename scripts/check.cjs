@@ -36,8 +36,8 @@ for (const asset of assets) if (!fs.existsSync(asset.local) || !fs.statSync(asse
 const projects = JSON.parse(fs.readFileSync('data/projects.json', 'utf8'));
 if (projects.length !== 4 || projects.some(project => project.images.length !== 2)) errors.push('Expected exactly 4 projects with 2 photos each');
 const location = JSON.parse(fs.readFileSync('data/site.json', 'utf8'));
-if (!htmlByPage.get('devis.html').includes(`action="https://formsubmit.co/${location.quoteEmail}"`)) errors.push('Incorrect quote email destination');
-if (!htmlByPage.get('devis.html').includes('data-email-form="devis" method="POST"')) errors.push('Missing native email form POST');
+if (!htmlByPage.get('devis.html').includes('data-whatsapp-form="devis"')) errors.push('Missing WhatsApp quote form');
+if (htmlByPage.get('devis.html').includes('formsubmit.co')) errors.push('Unexpected email submission service');
 for (const page of ['contact.html', 'devis.html']) {
   if (!htmlByPage.get(page).includes(`${location.latitude}, ${location.longitude}`)) errors.push(`${page}: GPS missing`);
   if (!htmlByPage.get(page).includes(`cid=${location.mapsCid}`)) errors.push(`${page}: wrong map`);

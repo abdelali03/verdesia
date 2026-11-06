@@ -191,7 +191,7 @@
     const privacy = button.dataset.info === 'privacy';
     $('#info-title').textContent = privacy ? 'Confidentialité' : 'Mentions légales';
     $('#info-text').textContent = privacy
-      ? 'Les demandes de devis sont transmises par FormSubmit à salaheddinehafidi@gmail.com afin que notre équipe puisse vous répondre. Le formulaire de contact prépare un message que vous choisissez d’envoyer sur WhatsApp. Ce site ne conserve pas vos coordonnées. FormSubmit, Google Maps et les réseaux sociaux sont des services externes soumis à leurs propres règles de confidentialité.'
+      ? 'Les formulaires de devis et de contact préparent un message dans votre navigateur. Vous choisissez ensuite de le transmettre à notre équipe sur WhatsApp. Ce site ne conserve pas vos coordonnées. Google Maps et les réseaux sociaux sont des services externes soumis à leurs propres règles de confidentialité.'
       : 'Pépinière Greenouala Bouskoura — Verdesia. Ouled Malek Hamri, Bouskoura 27820, Maroc. Téléphone : +212 660 273737. Les informations juridiques complètes de l’éditeur et de l’hébergeur seront ajoutées avant la publication définitive.';
     openDialog(info);
   }));

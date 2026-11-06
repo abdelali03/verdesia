@@ -84,34 +84,15 @@
     update(0);
   });
   const fieldNames = {
-    type_client: 'Vous êtes', societe: 'Société', civilite: 'Civilité', nom: 'Nom', prenom: 'Prénom',
-    adresse: 'Adresse', code_postal: 'Code postal', ville: 'Ville', email: 'Email', telephone: 'Téléphone',
-    service: 'Service souhaité', objet: 'Sujet', demande: 'Votre demande',
+    nom: 'Nom', prenom: 'Prénom', ville: 'Ville', email: 'Email', telephone: 'Téléphone',
+    service: 'Votre demande', description: 'Description', objet: 'Sujet', demande: 'Votre message',
   };
-  $$('[data-whatsapp-form], [data-email-form]').forEach(form => {
-    const clientType = $('[name="type_client"]', form);
-    const company = $('.element-societe', form);
-    function updateCompany() {
-      if (!company) return;
-      const required = Boolean(clientType.value && clientType.value !== 'particulier');
-      company.hidden = !required;
-      const input = $('input', company);
-      input.disabled = !required;
-      input.required = required;
-    }
-    clientType?.addEventListener('change', updateCompany);
-    updateCompany();
-    const antiSpam = $('[name="anti_spam"]', form);
-    antiSpam?.addEventListener('input', () => antiSpam.setCustomValidity(antiSpam.value && Number(antiSpam.value) !== 12 ? 'Vérifiez le résultat de l’opération.' : ''));
+  $$('[data-whatsapp-form]').forEach(form => {
     form.addEventListener('submit', event => {
-      if (antiSpam) antiSpam.setCustomValidity(Number(antiSpam.value) !== 12 ? 'Vérifiez le résultat de l’opération.' : '');
+      event.preventDefault();
       if (!form.reportValidity()) {
-        event.preventDefault();
         return;
       }
-      // Email quotes use the form's native POST to the configured mail service.
-      if (form.hasAttribute('data-email-form')) return;
-      event.preventDefault();
       const lines = [form.dataset.whatsappForm === 'devis' ? 'Bonjour Verdesia, je souhaite demander un devis.' : 'Bonjour Verdesia, je souhaite vous contacter.', ''];
       const data = new FormData(form);
       Object.entries(fieldNames).forEach(([key, label]) => {
@@ -121,7 +102,6 @@
         const displayed = select?.tagName === 'SELECT' ? select.selectedOptions[0].textContent.trim() : String(value).trim();
         lines.push(`${label} : ${displayed}`);
       });
-      if (data.has('newsletter[]')) lines.push('Je souhaite recevoir vos actualités.');
       const message = lines.join('\n');
       $('#request-summary').textContent = message;
       $('#request-send').href = `https://wa.me/${document.body.dataset.whatsapp}?text=${encodeURIComponent(message)}`;
