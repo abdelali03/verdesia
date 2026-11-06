@@ -4,6 +4,10 @@
 :focus-visible { outline: 2px solid var(--vert-clair); outline-offset: 6px; }
 body { overflow-x: clip; }
 .brand { display: inline-block; font-family: var(--police-krub); font-size: clamp(23px, 1.25rem + 1vw, 36px); font-weight: 700; font-style: italic; letter-spacing: .12em; line-height: 1.2; white-space: nowrap; }
+.page-accueil .hero-visuel .image-fond img,
+.page-jardin .hero-visuel .image-fond img { object-position: 50% 42%; }
+.page-accueil .hero-visuel h1,
+.page-jardin .hero-visuel h1 { text-shadow: 0 2px 18px rgb(0 0 0 / .35); }
 #header #menu-bureau { display: none; }
 #header .actions #burger { display: flex; }
 #header .actions .cta { gap: 20px; white-space: nowrap; }
@@ -49,6 +53,8 @@ footer .legal button:hover { text-decoration: underline; text-underline-offset: 
 .photo-counter { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: rgb(255 255 255 / .7); }
 @media (min-width: 1001px) { .header-socials { display: block; } }
 @media (max-width: 540px) {
+  .page-accueil .hero-visuel .image-fond img,
+  .page-jardin .hero-visuel .image-fond img { object-position: 55% 50%; }
   #header .brand { font-size: 22px; }
   #menu-mobile { width: min(375px, 90vw); }
   #photo-dialog button { width: 42px; height: 42px; }

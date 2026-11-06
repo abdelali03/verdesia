@@ -34,8 +34,10 @@ for (const filename of ['js/main.js', 'js/pages.js']) new Script(fs.readFileSync
 const assets = JSON.parse(fs.readFileSync('assets/asset-sources.json', 'utf8')).files;
 for (const asset of assets) if (!fs.existsSync(asset.local) || !fs.statSync(asset.local).size) errors.push(`Missing/empty asset: ${asset.local}`);
 const projects = JSON.parse(fs.readFileSync('data/projects.json', 'utf8'));
-if (projects.length !== 26 || projects.some(project => !project.images.length)) errors.push('Incomplete project content');
+if (projects.length !== 4 || projects.some(project => project.images.length !== 2)) errors.push('Expected exactly 4 projects with 2 photos each');
 const location = JSON.parse(fs.readFileSync('data/site.json', 'utf8'));
+if (!htmlByPage.get('devis.html').includes(`action="https://formsubmit.co/${location.quoteEmail}"`)) errors.push('Incorrect quote email destination');
+if (!htmlByPage.get('devis.html').includes('data-email-form="devis" method="POST"')) errors.push('Missing native email form POST');
 for (const page of ['contact.html', 'devis.html']) {
   if (!htmlByPage.get(page).includes(`${location.latitude}, ${location.longitude}`)) errors.push(`${page}: GPS missing`);
   if (!htmlByPage.get(page).includes(`cid=${location.mapsCid}`)) errors.push(`${page}: wrong map`);

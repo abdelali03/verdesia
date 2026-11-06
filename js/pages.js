@@ -83,26 +83,12 @@
     visibility.observe(element);
     update(0);
   });
-  const filters = $$('.project-filter');
-  const projectRows = $$('.project-row');
-  filters.forEach(button => button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-    filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    let visibleCount = 0;
-    projectRows.forEach(row => {
-      row.hidden = category !== 'all' && row.dataset.category !== category;
-      if (!row.hidden) visibleCount++;
-    });
-    $('#filter-status').textContent = `${visibleCount} projet${visibleCount > 1 ? 's' : ''} affiché${visibleCount > 1 ? 's' : ''}`;
-    projectCarousels.forEach(control => control.reset());
-  }));
-
   const fieldNames = {
     type_client: 'Vous êtes', societe: 'Société', civilite: 'Civilité', nom: 'Nom', prenom: 'Prénom',
     adresse: 'Adresse', code_postal: 'Code postal', ville: 'Ville', email: 'Email', telephone: 'Téléphone',
     service: 'Service souhaité', objet: 'Sujet', demande: 'Votre demande',
   };
-  $$('[data-whatsapp-form]').forEach(form => {
+  $$('[data-whatsapp-form], [data-email-form]').forEach(form => {
     const clientType = $('[name="type_client"]', form);
     const company = $('.element-societe', form);
     function updateCompany() {
@@ -118,9 +104,14 @@
     const antiSpam = $('[name="anti_spam"]', form);
     antiSpam?.addEventListener('input', () => antiSpam.setCustomValidity(antiSpam.value && Number(antiSpam.value) !== 12 ? 'Vérifiez le résultat de l’opération.' : ''));
     form.addEventListener('submit', event => {
-      event.preventDefault();
       if (antiSpam) antiSpam.setCustomValidity(Number(antiSpam.value) !== 12 ? 'Vérifiez le résultat de l’opération.' : '');
-      if (!form.reportValidity()) return;
+      if (!form.reportValidity()) {
+        event.preventDefault();
+        return;
+      }
+      // Email quotes use the form's native POST to the configured mail service.
+      if (form.hasAttribute('data-email-form')) return;
+      event.preventDefault();
       const lines = [form.dataset.whatsappForm === 'devis' ? 'Bonjour Verdesia, je souhaite demander un devis.' : 'Bonjour Verdesia, je souhaite vous contacter.', ''];
       const data = new FormData(form);
       Object.entries(fieldNames).forEach(([key, label]) => {

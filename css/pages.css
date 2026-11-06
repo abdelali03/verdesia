@@ -23,11 +23,12 @@
 #menu-mobile nav a[aria-current=page] { color: var(--vert); font-weight: 600; background: var(--fond-saumon); }
 .projects-hero .hero-visuel .image-fond::before { background: linear-gradient(180deg, rgb(11 33 44 / .45), rgb(35 66 58 / .55)); }
 .projects-hero .image-fond img { object-position: center bottom; }
-.projects-section { width: min(1200px, calc(100% - 48px)); margin-inline: auto; }
-.project-filters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; padding-block: 72px 50px; align-items: stretch; }
-.project-filter { min-height: 70px; padding: 15px 22px; border: 1px solid var(--vert-clair); color: var(--vert); font-family: var(--police-cossette); font-size: 16px; font-weight: 400; letter-spacing: .15em; line-height: 1.15; text-transform: uppercase; transition: background .2s, color .2s; }
-.project-filter[aria-pressed=true] { background: var(--vert); border-color: var(--vert); color: white; }
-.project-filter:hover { background: var(--fond-vert-clair); color: var(--vert); }
+.projects-section { width: min(1200px, calc(100% - 48px)); margin-inline: auto; padding-top: var(--resp-m); }
+.contact-hero .hero-visuel .image-fond::before,
+.quote-hero .hero-visuel .image-fond::before { background: linear-gradient(180deg, rgb(11 33 44 / .25), rgb(11 33 44 / .4)); }
+.contact-hero .image-fond img { object-position: 50% 60%; }
+.quote-hero .image-fond img { object-position: center; }
+.contact-hero h1, .quote-hero h1 { text-shadow: 0 2px 18px rgb(0 0 0 / .3); }
 .project-row { display: grid; grid-template-columns: 41.4% minmax(0, 58.6%); align-items: start; padding-block: 50px; }
 .project-description { text-align: right; padding-right: 45px; }
 .project-description h2 { font-family: var(--police-krub); font-weight: 500; font-size: clamp(28px, 2.8vw, 38px); line-height: 1.35; color: var(--vert); margin: 0 0 46px; }
@@ -75,7 +76,6 @@
 #request-send svg { width: 22px; height: 22px; fill: none; stroke: currentColor; }
 @media (max-width: 1000px) {
   .footer-main { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .project-filters { grid-template-columns: 1fr 1fr; column-gap: clamp(40px, 20vw, 260px); row-gap: 36px; padding: 56px 60px 40px; }
   .project-row { grid-template-columns: 41.4% minmax(0, 58.6%); padding-block: 50px; }
   .project-description { padding-right: 30px; }
   .project-description h2 { font-size: clamp(25px, 3.4vw, 34px); }
@@ -84,8 +84,6 @@
   .contact-option { padding: 24px; }
 }
 @media (max-width: 767px) {
-  .project-filters { padding: 40px 0 20px; column-gap: 16px; row-gap: 16px; }
-  .project-filter { min-height: 66px; font-size: 13px; padding: 12px; }
   .project-row { display: flex; flex-direction: column-reverse; padding-block: 34px; gap: 28px; }
   .project-description { padding-right: 0; text-align: left; }
   .project-description h2 { font-size: 28px; margin-bottom: 24px; }
