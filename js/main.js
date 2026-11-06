@@ -30,6 +30,10 @@
   });
   burger.addEventListener('click', () => openDialog(menu));
   $('.fermer', menu).addEventListener('click', () => menu.close());
+  const desktopMenu = window.matchMedia('(min-width: 1024px)');
+  desktopMenu.addEventListener('change', event => {
+    if (event.matches && menu.open) menu.close();
+  });
   $$('.dialog-close').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
   $$('nav a', menu).forEach(link => link.addEventListener('click', () => menu.close()));
   $$('a[href="#contact"]').forEach(link => link.addEventListener('click', event => {

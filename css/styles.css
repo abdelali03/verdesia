@@ -52,6 +52,29 @@ footer .legal button:hover { text-decoration: underline; text-underline-offset: 
 #photo-dialog .photo-next { right: 24px; top: calc(50% - 29px); }
 .photo-counter { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); font-size: 13px; color: rgb(255 255 255 / .7); }
 @media (min-width: 1001px) { .header-socials { display: block; } }
+@media (min-width: 1024px) {
+  #header > div { gap: 16px; }
+  #header .brand { font-size: 24px; }
+  #header #menu-bureau { display: block; margin-inline: auto; }
+  #header #menu-bureau > ul { display: flex; flex-flow: row nowrap; align-items: center; gap: 4px; }
+  #header #menu-bureau .label { display: block; padding: 10px 8px; font-size: 13px; letter-spacing: 0; white-space: nowrap; }
+  #header #menu-bureau a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--vert-clair); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+  #header .actions { flex: none; gap: 12px; }
+  #header .actions #burger { display: none; }
+  #header .actions .telephone, #header .header-socials { display: none; }
+  #header .actions .cta { display: inline-flex; gap: 12px; padding: 15px 18px; font-size: 13px; letter-spacing: .14em; }
+}
+@media (min-width: 1280px) {
+  #header .brand { font-size: 28px; }
+  #header #menu-bureau .label { font-size: 14px; padding-inline: 10px; }
+  #header .actions .telephone { display: inline-block; font-size: 14px; white-space: nowrap; }
+}
+@media (min-width: 1440px) {
+  #header .brand { font-size: 30px; }
+  #header #menu-bureau > ul { gap: 8px; }
+  #header .header-socials { display: block; }
+  #header .header-socials .social-links { gap: 12px; }
+}
 @media (max-width: 540px) {
   .page-accueil .hero-visuel .image-fond img,
   .page-jardin .hero-visuel .image-fond img { object-position: 55% 50%; }

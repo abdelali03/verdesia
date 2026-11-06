@@ -14,7 +14,7 @@ Ouvrir `index.html` directement dans un navigateur, ou lancer `npm start`, puis 
 - `devis.html` : grande photo de jardin avec titre superposé et formulaire simplifié, avec neuf prestations et envoi par WhatsApp.
 - `contact.html` : grande photo de patio végétalisé avec titre superposé, téléphone, WhatsApp, formulaire de message, adresse et carte.
 
-Toutes les pages partagent la barre flottante, le menu latéral avec Instagram/Facebook/WhatsApp, un pied de page minimaliste et les boutons flottants WhatsApp/retour en haut.
+Toutes les pages partagent la barre flottante avec les liens horizontaux sur ordinateur (à partir de 1024 px) et le menu latéral sur mobile. Instagram/Facebook/WhatsApp restent accessibles dans le menu mobile et la barre des grands écrans. Le pied de page est minimaliste et les boutons WhatsApp/retour en haut restent flottants.
 
 ## Modifier puis reconstruire
 
