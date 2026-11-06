@@ -1,0 +1,378 @@
+[
+  {
+    "id": "projet-1",
+    "name": "Fairmont Royal Palm",
+    "place": "Villa 106 - Marrakech",
+    "category": "immobilier",
+    "client": "Domaine Royal Palm",
+    "service": "Travaux paysagers",
+    "year": "2025",
+    "images": [
+      "assets/images/projets/projet-01-01.jpeg",
+      "assets/images/projets/projet-01-02.jpeg",
+      "assets/images/projets/projet-01-03.jpeg",
+      "assets/images/projets/projet-01-04.jpeg",
+      "assets/images/projets/projet-01-05.jpeg",
+      "assets/images/projets/projet-01-06.jpeg",
+      "assets/images/projets/projet-01-07.jpeg",
+      "assets/images/projets/projet-01-08.jpeg"
+    ]
+  },
+  {
+    "id": "projet-2",
+    "name": "Fairmont Royal Palm",
+    "place": "Villa 101 - Marrakech",
+    "category": "immobilier",
+    "client": "Domaine Royal Palm",
+    "service": "Travaux paysagers",
+    "year": "2024",
+    "images": [
+      "assets/images/projets/projet-02-01.jpeg",
+      "assets/images/projets/projet-02-02.jpeg"
+    ]
+  },
+  {
+    "id": "projet-3",
+    "name": "Fairmont Royal Palm",
+    "place": "Divers Villa - Marrakech",
+    "category": "immobilier",
+    "client": "Domaine Royal Palm",
+    "service": "Travaux paysagers de 11 villas de la zone oliveraie",
+    "year": "Selon planning / 2019",
+    "images": [
+      "assets/images/projets/projet-03-01.jpeg",
+      "assets/images/projets/projet-03-02.jpeg",
+      "assets/images/projets/projet-03-03.jpeg",
+      "assets/images/projets/projet-03-04.jpeg",
+      "assets/images/projets/projet-03-05.jpeg",
+      "assets/images/projets/projet-03-06.jpg"
+    ]
+  },
+  {
+    "id": "projet-4",
+    "name": "Lotissement Luxavia",
+    "place": "Marrakech",
+    "category": "immobilier",
+    "client": "Coopérative Mabrouka",
+    "service": "Études et travaux clé en mains",
+    "year": "2023",
+    "images": [
+      "assets/images/projets/projet-04-01.jpeg",
+      "assets/images/projets/projet-04-02.jpeg",
+      "assets/images/projets/projet-04-03.jpg",
+      "assets/images/projets/projet-04-04.jpeg",
+      "assets/images/projets/projet-04-05.jpg",
+      "assets/images/projets/projet-04-06.jpeg",
+      "assets/images/projets/projet-04-07.jpg",
+      "assets/images/projets/projet-04-08.jpeg"
+    ]
+  },
+  {
+    "id": "projet-5",
+    "name": "Mahaj Riad",
+    "place": "Rabat",
+    "category": "immobilier",
+    "client": "Fonciere Chellah - CDG",
+    "service": "Travaux Paysager",
+    "year": "3 mois / 2016",
+    "images": [
+      "assets/images/projets/projet-05-01.jpg",
+      "assets/images/projets/projet-05-02.jpg",
+      "assets/images/projets/projet-05-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-6",
+    "name": "The Park Anfa",
+    "place": "Casablanca",
+    "category": "immobilier",
+    "client": "CGI",
+    "service": "Travaux Paysager",
+    "year": "6 mois / 2017",
+    "images": [
+      "assets/images/projets/projet-06-01.jpg",
+      "assets/images/projets/projet-06-02.jpg",
+      "assets/images/projets/projet-06-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-7",
+    "name": "Casa Greentown",
+    "place": "Casablanca",
+    "category": "immobilier",
+    "client": "Alliance - CGI GIE Palmeraie developpement",
+    "service": "Travaux Paysager",
+    "year": "3 mois / 2014",
+    "images": [
+      "assets/images/projets/projet-07-01.jpg",
+      "assets/images/projets/projet-07-02.jpg",
+      "assets/images/projets/projet-07-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-8",
+    "name": "Zones Privatives et Communes - Bouskoura",
+    "place": "",
+    "category": "immobilier",
+    "client": "CGI",
+    "service": "Entretien des espaces verts",
+    "year": "Contrat cadre sur 3 ans / 2014",
+    "images": [
+      "assets/images/projets/projet-08-01.jpg",
+      "assets/images/projets/projet-08-02.jpg",
+      "assets/images/projets/projet-08-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-9",
+    "name": "Hotel Vichy",
+    "place": "Moulay Yacoub",
+    "category": "immobilier",
+    "client": "SOTHERMY - CDG",
+    "service": "Travaux Paysager",
+    "year": "3 mois / 2017",
+    "images": [
+      "assets/images/projets/projet-09-01.jpg",
+      "assets/images/projets/projet-09-02.jpg",
+      "assets/images/projets/projet-09-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-10",
+    "name": "Hotel Be Live",
+    "place": "Saidia",
+    "category": "immobilier",
+    "client": "MADAEF - CDG",
+    "service": "Entretien des espaces verts",
+    "year": "Contrat annuel / 2011",
+    "images": [
+      "assets/images/projets/projet-10-01.jpg",
+      "assets/images/projets/projet-10-02.jpg",
+      "assets/images/projets/projet-10-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-11",
+    "name": "Residence Les Andalines",
+    "place": "Fes",
+    "category": "immobilier",
+    "client": "CGI",
+    "service": "Entretien des espaces verts",
+    "year": "Contrat annuel / 2012",
+    "images": [
+      "assets/images/projets/projet-11-01.jpg",
+      "assets/images/projets/projet-11-02.jpg",
+      "assets/images/projets/projet-11-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-12",
+    "name": "Tramway",
+    "place": "Rabat / Salé",
+    "category": "publics",
+    "client": "Société du Tramway de Rabat / Salé",
+    "service": "Travaux Paysager",
+    "year": "24 mois / 2018",
+    "images": [
+      "assets/images/projets/projet-12-01.jpg",
+      "assets/images/projets/projet-12-02.jpg",
+      "assets/images/projets/projet-12-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-13",
+    "name": "Corniche",
+    "place": "Rabat",
+    "category": "publics",
+    "client": "Rabat Région Aménagement",
+    "service": "Travaux Paysager",
+    "year": "6 mois / 2016",
+    "images": [
+      "assets/images/projets/projet-13-01.jpg",
+      "assets/images/projets/projet-13-02.jpg",
+      "assets/images/projets/projet-13-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-14",
+    "name": "Square Karl Fick",
+    "place": "Casablanca",
+    "category": "publics",
+    "client": "Casa Aménagement SA",
+    "service": "Travaux Paysager",
+    "year": "6 mois / 2016",
+    "images": [
+      "assets/images/projets/projet-14-01.jpg",
+      "assets/images/projets/projet-14-02.jpg",
+      "assets/images/projets/projet-14-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-15",
+    "name": "Auda",
+    "place": "Casablanca",
+    "category": "publics",
+    "client": "Agence d'Urbanisation\net de Développement d'Anfa",
+    "service": "Travaux Paysager",
+    "year": "3 mois / 2016",
+    "images": [
+      "assets/images/projets/projet-15-01.jpg",
+      "assets/images/projets/projet-15-02.jpg",
+      "assets/images/projets/projet-15-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-16",
+    "name": "Parc de Loisir",
+    "place": "Ksar Kebir",
+    "category": "publics",
+    "client": "Agence pour la Promotion et le Développement des provinces du Nord",
+    "service": "Travaux Paysager",
+    "year": "6 mois / 2017",
+    "images": [
+      "assets/images/projets/projet-16-01.jpg",
+      "assets/images/projets/projet-16-02.jpg",
+      "assets/images/projets/projet-16-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-17",
+    "name": "Morocco Mall",
+    "place": "Casablanca",
+    "category": "publics",
+    "client": "Al Amine Investment",
+    "service": "Entretien des espaces verts",
+    "year": "Contrat annuel / 2013",
+    "images": [
+      "assets/images/projets/projet-17-01.jpg",
+      "assets/images/projets/projet-17-02.jpg",
+      "assets/images/projets/projet-17-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-18",
+    "name": "Casanearshore",
+    "place": "Casablanca",
+    "category": "publics",
+    "client": "Ewane Assets",
+    "service": "Travaux Paysager",
+    "year": "3 mois / 2018",
+    "images": [
+      "assets/images/projets/projet-18-01.jpg",
+      "assets/images/projets/projet-18-02.jpg",
+      "assets/images/projets/projet-18-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-19",
+    "name": "Hopital Cheikh Zayed",
+    "place": "Khouribga",
+    "category": "publics",
+    "client": "OCP - Hopital Cheikh Zayed",
+    "service": "Travaux Paysager",
+    "year": "4 mois / 2014",
+    "images": [
+      "assets/images/projets/projet-19-01.jpg",
+      "assets/images/projets/projet-19-02.jpg",
+      "assets/images/projets/projet-19-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-20",
+    "name": "Sfiha Centre",
+    "place": "Al Hoceima",
+    "category": "publics",
+    "client": "CGI",
+    "service": "Travaux Paysager",
+    "year": "4 mois / 2013",
+    "images": [
+      "assets/images/projets/projet-20-01.jpg",
+      "assets/images/projets/projet-20-02.jpg",
+      "assets/images/projets/projet-20-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-21",
+    "name": "Carrefour",
+    "place": "Oujda",
+    "category": "publics",
+    "client": "Label'Vie",
+    "service": "Travaux Paysager",
+    "year": "6 mois / 2014",
+    "images": [
+      "assets/images/projets/projet-21-01.jpg",
+      "assets/images/projets/projet-21-02.jpg",
+      "assets/images/projets/projet-21-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-22",
+    "name": "Carrefour Sidi Maarouf",
+    "place": "Casablanca",
+    "category": "publics",
+    "client": "Label'Vie",
+    "service": "Travaux Paysager",
+    "year": "3 mois / 2015",
+    "images": [
+      "assets/images/projets/projet-22-01.jpg",
+      "assets/images/projets/projet-22-02.jpg",
+      "assets/images/projets/projet-22-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-23",
+    "name": "Terrains Entrainement FUS",
+    "place": "Rabat",
+    "category": "publics",
+    "client": "Association F.U.S",
+    "service": "Etude Paysagère d'un écran végétal",
+    "year": "Décembre 2013",
+    "images": [
+      "assets/images/projets/projet-23-01.jpg",
+      "assets/images/projets/projet-23-02.jpg",
+      "assets/images/projets/projet-23-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-24",
+    "name": "Usine Bombardier",
+    "place": "Casablanca",
+    "category": "industriels",
+    "client": "Bombardier - CTP Maroc",
+    "service": "Travaux Paysagers et autobloquant",
+    "year": "6 mois / 2014",
+    "images": [
+      "assets/images/projets/projet-24-01.jpg",
+      "assets/images/projets/projet-24-02.jpg",
+      "assets/images/projets/projet-24-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-25",
+    "name": "Parc Industriel",
+    "place": "Jorf Lasfar",
+    "category": "industriels",
+    "client": "MEDZ / CDG",
+    "service": "Travaux Paysager",
+    "year": "4 mois / 2016",
+    "images": [
+      "assets/images/projets/projet-25-01.jpg",
+      "assets/images/projets/projet-25-02.jpg",
+      "assets/images/projets/projet-25-03.jpg"
+    ]
+  },
+  {
+    "id": "projet-26",
+    "name": "Parc Industriel Ait Kamra",
+    "place": "Al Hoceima",
+    "category": "industriels",
+    "client": "SFCDG",
+    "service": "Travaux paysager",
+    "year": "3 mois / 2014",
+    "images": [
+      "assets/images/projets/projet-26-01.jpg",
+      "assets/images/projets/projet-26-02.jpg",
+      "assets/images/projets/projet-26-03.jpg"
+    ]
+  }
+]

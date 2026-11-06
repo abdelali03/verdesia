@@ -1,0 +1,555 @@
+{
+  "reference": "https://www.sauvaje.fr/amenagement-jardins-exterieurs",
+  "note": "Contenus et visuels provisoires, ?? remplacer par ceux du client avant publication.",
+  "files": [
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/miniatures/38314/amenagement-paysager-16_9-2000.webp",
+      "local": "assets/images/hero-01.webp"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/miniatures/38314/amenagement-paysager-2_3-960.webp",
+      "local": "assets/images/hero-mobile.webp"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/miniatures/36745/cta-1600.webp",
+      "local": "assets/images/contact-01.webp"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/miniatures/27358/dsc00580-16_9-1280.webp",
+      "local": "assets/images/etapes-01.webp"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/IMG_1932-1-e1791288674641-640x670.jpeg",
+      "local": "assets/images/galerie-01.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2025/04/l1002309-copie-640x427.jpg",
+      "local": "assets/images/galerie-02.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2024/03/l1005364-1-640x427.jpeg",
+      "local": "assets/images/galerie-03.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/DM-33-NICOLO_09-1-2-640x862.jpg",
+      "local": "assets/images/galerie-04.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2019/02/15-l1009401-640x427.jpg",
+      "local": "assets/images/galerie-05.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2025/04/6870-c2-640x438.jpg",
+      "local": "assets/images/galerie-06.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/Patio-640x646.jpg",
+      "local": "assets/images/galerie-07.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2017/06/JBERNY_DSC6517ret-640x427.jpg",
+      "local": "assets/images/galerie-08.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2017/09/Baignade-naturelle-vertdeco-Magny-les-hameaux-2-640x427.jpg",
+      "local": "assets/images/galerie-09.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/325966344_494701776161504_5793527786196141485_n-640x853.jpg",
+      "local": "assets/images/galerie-10.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2025/04/dsc08332-640x427.jpeg",
+      "local": "assets/images/galerie-11.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/terrasse-particulier-640x854.jpeg",
+      "local": "assets/images/galerie-12.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/21_1115_plan-jardin-640x447.jpg",
+      "local": "assets/images/galerie-13.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/Illustration-demeure-640x453.png",
+      "local": "assets/images/galerie-14.png"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/Illustration-jardin-640x421.png",
+      "local": "assets/images/galerie-15.png"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2022/02/jardin-de-particulier-640x416.jpg",
+      "local": "assets/images/galerie-16.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2022/03/coup1_2-640x416.jpg",
+      "local": "assets/images/galerie-17.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/IMG_1932-1-e1791288674641.jpeg",
+      "local": "assets/images/galerie-grand-01.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2025/04/l1002309-copie.jpg",
+      "local": "assets/images/galerie-grand-02.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2024/03/l1005364-1.jpeg",
+      "local": "assets/images/galerie-grand-03.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/DM-33-NICOLO_09-1-2.jpg",
+      "local": "assets/images/galerie-grand-04.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2019/02/15-l1009401-scaled.jpg",
+      "local": "assets/images/galerie-grand-05.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2025/04/6870-c2.jpg",
+      "local": "assets/images/galerie-grand-06.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/Patio.jpg",
+      "local": "assets/images/galerie-grand-07.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2017/06/JBERNY_DSC6517ret.jpg",
+      "local": "assets/images/galerie-grand-08.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2017/09/Baignade-naturelle-vertdeco-Magny-les-hameaux-2.jpg",
+      "local": "assets/images/galerie-grand-09.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/325966344_494701776161504_5793527786196141485_n.jpg",
+      "local": "assets/images/galerie-grand-10.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2025/04/dsc08332-scaled.jpeg",
+      "local": "assets/images/galerie-grand-11.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/terrasse-particulier.jpeg",
+      "local": "assets/images/galerie-grand-12.jpeg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/21_1115_plan-jardin.jpg",
+      "local": "assets/images/galerie-grand-13.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/Illustration-demeure.png",
+      "local": "assets/images/galerie-grand-14.png"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2026/09/Illustration-jardin.png",
+      "local": "assets/images/galerie-grand-15.png"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2022/02/jardin-de-particulier.jpg",
+      "local": "assets/images/galerie-grand-16.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/2022/03/coup1_2.jpg",
+      "local": "assets/images/galerie-grand-17.jpg"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/uploads/miniatures/37179/abeille-1600.webp",
+      "local": "assets/images/abeille-01.webp"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/krub-light-v1787742452.woff2",
+      "local": "assets/fonts/krub-light.woff2"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/krub-regular-v1787742452.woff2",
+      "local": "assets/fonts/krub-regular.woff2"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/krub-italic-v1787742452.woff2",
+      "local": "assets/fonts/krub-italic.woff2"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/krub-medium-v1787742452.woff2",
+      "local": "assets/fonts/krub-medium.woff2"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/krub-semi-bold-v1787742452.woff2",
+      "local": "assets/fonts/krub-semi-bold.woff2"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/krub-bold-v1787742452.woff2",
+      "local": "assets/fonts/krub-bold.woff2"
+    },
+    {
+      "url": "https://www.sauvaje.fr/wp-content/themes/sauvaje/assets/woff2/cossette-titre-regular-v1787742452.woff2",
+      "local": "assets/fonts/cossette-titre-regular.woff2"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/2.1.jpeg",
+      "local": "assets/images/projets/projet-01-01.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/2.2.jpeg",
+      "local": "assets/images/projets/projet-01-02.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/1.1.jpeg",
+      "local": "assets/images/projets/projet-01-03.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/1.2.jpeg",
+      "local": "assets/images/projets/projet-01-04.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/3.1.jpeg",
+      "local": "assets/images/projets/projet-01-05.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/3.2.jpeg",
+      "local": "assets/images/projets/projet-01-06.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/4.1.jpeg",
+      "local": "assets/images/projets/projet-01-07.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/4.2.jpeg",
+      "local": "assets/images/projets/projet-01-08.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-29-at-11.38.43-1.jpeg",
+      "local": "assets/images/projets/projet-02-01.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/WhatsApp-Image-2025-10-29-at-11.38.43.jpeg",
+      "local": "assets/images/projets/projet-02-02.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-4.jpeg",
+      "local": "assets/images/projets/projet-03-01.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-4.jpeg",
+      "local": "assets/images/projets/projet-03-02.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-2.jpeg",
+      "local": "assets/images/projets/projet-03-03.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/04-2.jpeg",
+      "local": "assets/images/projets/projet-03-04.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/05-2.jpeg",
+      "local": "assets/images/projets/projet-03-05.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-1.jpg",
+      "local": "assets/images/projets/projet-03-06.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-1.jpeg",
+      "local": "assets/images/projets/projet-04-01.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-1.jpeg",
+      "local": "assets/images/projets/projet-04-02.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/luxavia03-1.jpg",
+      "local": "assets/images/projets/projet-04-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/04.jpeg",
+      "local": "assets/images/projets/projet-04-04.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/luxavia02-1.jpg",
+      "local": "assets/images/projets/projet-04-05.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/03.jpeg",
+      "local": "assets/images/projets/projet-04-06.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/luxavia01-1.jpg",
+      "local": "assets/images/projets/projet-04-07.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/11/05.jpeg",
+      "local": "assets/images/projets/projet-04-08.jpeg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-2.jpg",
+      "local": "assets/images/projets/projet-05-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-2.jpg",
+      "local": "assets/images/projets/projet-05-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-2.jpg",
+      "local": "assets/images/projets/projet-05-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-3.jpg",
+      "local": "assets/images/projets/projet-06-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-3.jpg",
+      "local": "assets/images/projets/projet-06-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-3.jpg",
+      "local": "assets/images/projets/projet-06-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-4.jpg",
+      "local": "assets/images/projets/projet-07-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-4.jpg",
+      "local": "assets/images/projets/projet-07-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-4.jpg",
+      "local": "assets/images/projets/projet-07-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-5.jpg",
+      "local": "assets/images/projets/projet-08-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-5.jpg",
+      "local": "assets/images/projets/projet-08-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-5.jpg",
+      "local": "assets/images/projets/projet-08-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-6.jpg",
+      "local": "assets/images/projets/projet-09-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-6.jpg",
+      "local": "assets/images/projets/projet-09-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-6.jpg",
+      "local": "assets/images/projets/projet-09-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-10.jpg",
+      "local": "assets/images/projets/projet-10-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-10.jpg",
+      "local": "assets/images/projets/projet-10-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-8.jpg",
+      "local": "assets/images/projets/projet-10-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-11.jpg",
+      "local": "assets/images/projets/projet-11-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-11.jpg",
+      "local": "assets/images/projets/projet-11-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-9.jpg",
+      "local": "assets/images/projets/projet-11-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-12.jpg",
+      "local": "assets/images/projets/projet-12-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-12.jpg",
+      "local": "assets/images/projets/projet-12-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-10.jpg",
+      "local": "assets/images/projets/projet-12-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-14.jpg",
+      "local": "assets/images/projets/projet-13-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-14.jpg",
+      "local": "assets/images/projets/projet-13-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-12.jpg",
+      "local": "assets/images/projets/projet-13-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-15.jpg",
+      "local": "assets/images/projets/projet-14-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-15.jpg",
+      "local": "assets/images/projets/projet-14-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-13.jpg",
+      "local": "assets/images/projets/projet-14-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-16.jpg",
+      "local": "assets/images/projets/projet-15-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-16.jpg",
+      "local": "assets/images/projets/projet-15-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-14.jpg",
+      "local": "assets/images/projets/projet-15-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-17.jpg",
+      "local": "assets/images/projets/projet-16-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-17.jpg",
+      "local": "assets/images/projets/projet-16-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-15.jpg",
+      "local": "assets/images/projets/projet-16-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-18.jpg",
+      "local": "assets/images/projets/projet-17-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-18.jpg",
+      "local": "assets/images/projets/projet-17-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-16.jpg",
+      "local": "assets/images/projets/projet-17-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-19.jpg",
+      "local": "assets/images/projets/projet-18-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-19.jpg",
+      "local": "assets/images/projets/projet-18-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-17.jpg",
+      "local": "assets/images/projets/projet-18-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-20.jpg",
+      "local": "assets/images/projets/projet-19-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-20.jpg",
+      "local": "assets/images/projets/projet-19-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-18.jpg",
+      "local": "assets/images/projets/projet-19-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-21.jpg",
+      "local": "assets/images/projets/projet-20-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-21.jpg",
+      "local": "assets/images/projets/projet-20-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-19.jpg",
+      "local": "assets/images/projets/projet-20-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-22.jpg",
+      "local": "assets/images/projets/projet-21-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-22.jpg",
+      "local": "assets/images/projets/projet-21-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-20.jpg",
+      "local": "assets/images/projets/projet-21-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-23.jpg",
+      "local": "assets/images/projets/projet-22-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-23.jpg",
+      "local": "assets/images/projets/projet-22-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-21.jpg",
+      "local": "assets/images/projets/projet-22-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-24.jpg",
+      "local": "assets/images/projets/projet-23-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-24.jpg",
+      "local": "assets/images/projets/projet-23-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-22.jpg",
+      "local": "assets/images/projets/projet-23-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-25.jpg",
+      "local": "assets/images/projets/projet-24-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-25.jpg",
+      "local": "assets/images/projets/projet-24-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-23.jpg",
+      "local": "assets/images/projets/projet-24-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-26.jpg",
+      "local": "assets/images/projets/projet-25-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-26.jpg",
+      "local": "assets/images/projets/projet-25-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-24.jpg",
+      "local": "assets/images/projets/projet-25-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/02-27.jpg",
+      "local": "assets/images/projets/projet-26-01.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/01-27.jpg",
+      "local": "assets/images/projets/projet-26-02.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2024/08/03-25.jpg",
+      "local": "assets/images/projets/projet-26-03.jpg"
+    },
+    {
+      "url": "https://paysagem.ma/wp-content/uploads/2025/01/03-projet_PC_72ppi.jpg",
+      "local": "assets/images/projets/bandeau-projets.jpg"
+    }
+  ],
+  "projectReference": "https://paysagem.ma/projets/"
+}
