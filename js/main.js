@@ -126,34 +126,40 @@
   const pagination = $('.pagination', carousel);
   const previous = $('.precedent', carousel);
   const next = $('.suivant', carousel);
+  const rotation = $('.testimonial-rotation', carousel);
+  const status = $('.testimonial-status', carousel);
   let activeSlide = 0;
   let autoplay = null;
   let visible = false;
   let hovering = false;
   let focused = false;
+  let userPaused = false;
   const bullets = slides.map((slide, index) => {
     slide.id = `temoignage-${index + 1}`;
+    slide.setAttribute('role', 'group');
+    slide.setAttribute('aria-roledescription', 'témoignage');
+    slide.setAttribute('aria-label', `${index + 1} sur ${slides.length}`);
     const item = document.createElement('li');
     const button = document.createElement('button');
     button.type = 'button';
-    button.setAttribute('aria-label', `Témoignage ${index + 1}`);
+    button.setAttribute('aria-label', `Lire le témoignage de ${$('cite', slide).textContent}`);
     button.setAttribute('aria-controls', slide.id);
     button.addEventListener('click', () => { goToSlide(index); restartAutoplay(); });
     item.append(button); pagination.append(item);
     return button;
   });
   track.setAttribute('aria-label', 'Témoignages clients');
+  track.setAttribute('role', 'group');
   track.tabIndex = 0;
   function updatePagination(index) {
     activeSlide = index;
     bullets.forEach((bullet, i) => bullet.setAttribute('aria-current', String(i === index)));
-    previous.disabled = index === 0;
-    next.disabled = index === slides.length - 1;
   }
-  function goToSlide(index, smooth = true) {
-    index = Math.max(0, Math.min(slides.length - 1, index));
-    track.scrollTo({ left: slides[index].offsetLeft - slides[0].offsetLeft, behavior: smooth && !reducedMotion.matches ? 'smooth' : 'instant' });
+  function goToSlide(index, smooth = true, announce = true) {
+    index = (index + slides.length) % slides.length;
+    track.scrollTo({ left: slides[index].offsetLeft - slides[0].offsetLeft, behavior: smooth && !reducedMotion.matches ? 'smooth' : 'auto' });
     updatePagination(index);
+    if (announce) status.textContent = `Témoignage ${index + 1} sur ${slides.length} — ${$('cite', slides[index]).textContent}`;
   }
   previous.addEventListener('click', () => { goToSlide(activeSlide - 1); restartAutoplay(); });
   next.addEventListener('click', () => { goToSlide(activeSlide + 1); restartAutoplay(); });
@@ -162,33 +168,52 @@
     if (trackQueued) return;
     trackQueued = true;
     requestAnimationFrame(() => {
-      const step = slides[1].offsetLeft - slides[0].offsetLeft;
+      const step = slides[1]?.offsetLeft - slides[0].offsetLeft;
       if (step) updatePagination(Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / step))));
       trackQueued = false;
     });
   }, { passive: true });
   track.addEventListener('keydown', event => {
-    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
-    goToSlide(activeSlide + (event.key === 'ArrowRight' ? 1 : -1));
+    const index = event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : activeSlide + (event.key === 'ArrowRight' ? 1 : -1);
+    goToSlide(index);
     restartAutoplay();
   });
   function restartAutoplay() {
-    clearInterval(autoplay);
-    if (!visible || hovering || focused || document.hidden || reducedMotion.matches) return;
-    autoplay = setInterval(() => goToSlide((activeSlide + 1) % slides.length), 6500);
+    clearTimeout(autoplay);
+    if (!visible || hovering || focused || userPaused || document.hidden || reducedMotion.matches) return;
+    autoplay = setTimeout(() => { goToSlide(activeSlide + 1, true, false); restartAutoplay(); }, 4000);
   }
+  function setPaused(paused) {
+    userPaused = paused;
+    rotation.setAttribute('aria-pressed', String(userPaused));
+    rotation.setAttribute('aria-label', userPaused ? 'Reprendre le défilement automatique' : 'Mettre en pause le défilement automatique');
+    $('span', rotation).textContent = userPaused ? 'Reprendre' : 'Pause';
+    $('path', rotation).setAttribute('d', userPaused ? 'm9 5 9 7-9 7Z' : 'M9 5v14M15 5v14');
+    restartAutoplay();
+  }
+  rotation.addEventListener('click', () => {
+    if (userPaused) { hovering = false; focused = false; }
+    setPaused(!userPaused);
+  });
   carousel.addEventListener('mouseenter', () => { hovering = true; restartAutoplay(); });
   carousel.addEventListener('mouseleave', () => { hovering = false; restartAutoplay(); });
   carousel.addEventListener('focusin', () => { focused = true; restartAutoplay(); });
   carousel.addEventListener('focusout', event => { focused = carousel.contains(event.relatedTarget); restartAutoplay(); });
-  track.addEventListener('pointerdown', () => clearInterval(autoplay));
-  track.addEventListener('pointerup', restartAutoplay);
+  carousel.addEventListener('pointerdown', event => {
+    if (!rotation.contains(event.target)) setPaused(true);
+  }, { passive: true });
   document.addEventListener('visibilitychange', restartAutoplay);
-  reducedMotion.addEventListener('change', restartAutoplay);
+  function updateMotionPreference() {
+    rotation.hidden = reducedMotion.matches;
+    restartAutoplay();
+  }
+  reducedMotion.addEventListener('change', updateMotionPreference);
   new IntersectionObserver(entries => { visible = entries[0].isIntersecting; restartAutoplay(); }, { threshold: .5 }).observe(carousel);
-  new ResizeObserver(() => goToSlide(activeSlide, false)).observe(track);
+  new ResizeObserver(() => goToSlide(activeSlide, false, false)).observe(track);
   updatePagination(0);
+  updateMotionPreference();
   }
 
   $$('[data-info]').forEach(button => button.addEventListener('click', () => {

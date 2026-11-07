@@ -85,4 +85,42 @@ footer .legal button:hover { text-decoration: underline; text-underline-offset: 
   #photo-dialog .photo-prev { left: 12px; }
   #photo-dialog .photo-next { right: 12px; }
 }
+/* Spacious editorial testimonials, with native touch scrolling. */
+.bloc-temoignages { margin-top: 0; padding-block: clamp(64px, 8vw, 112px); background: #fcf7ef; color: var(--vert); }
+.bloc-temoignages .carrousel { max-width: 1000px; margin-inline: auto; margin-top: clamp(32px, 5vw, 56px); }
+.bloc-temoignages .piste { padding-inline: 0; }
+.bloc-temoignages .elements { touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+.bloc-temoignages .carrousel .elements .element { display: flex; align-items: center; }
+.bloc-temoignages .temoignage { width: 100%; min-height: 300px; padding: 12px clamp(4px, 2vw, 24px); justify-content: center; gap: 28px; }
+.bloc-temoignages blockquote { max-width: 820px; margin-inline: auto; font-size: clamp(20px, 1.3rem + .5vw, 30px); line-height: 1.7; color: var(--vert); }
+.bloc-temoignages figcaption { font-size: 17px; }
+.testimonial-controls { display: grid; grid-template-columns: 44px minmax(0, auto) 44px; align-items: center; justify-content: center; gap: 12px; margin-top: 36px; }
+.bloc-temoignages .testimonial-controls .fleches { display: contents; }
+.bloc-temoignages .testimonial-controls .fleches button { position: static; transform: none; width: 44px; height: 44px; border-color: #23423a40; color: var(--vert); }
+.bloc-temoignages .testimonial-controls .fleches button:hover { color: white; background: var(--vert); border-color: var(--vert); }
+.testimonial-controls .precedent { grid-column: 1; grid-row: 1; }
+.testimonial-controls .suivant { grid-column: 3; grid-row: 1; }
+.bloc-temoignages .testimonial-controls .pagination { grid-column: 2; grid-row: 1; gap: 0; margin: 0; }
+.bloc-temoignages .pagination button { width: 36px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; }
+.bloc-temoignages .pagination button::before { content: ''; width: 8px; height: 8px; border: 1px solid #23423a80; border-radius: 50%; transition: background-color .25s, transform .25s; }
+.bloc-temoignages .pagination button[aria-current=true] { background: transparent; }
+.bloc-temoignages .pagination button[aria-current=true]::before { background: var(--vert); border-color: var(--vert); transform: scale(1.2); }
+.testimonial-rotation { grid-column: 1 / -1; justify-self: center; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding-inline: 10px; font-size: 13px; color: var(--vert); }
+.testimonial-rotation:hover { text-decoration: underline; text-underline-offset: 4px; }
+.testimonial-google { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 20px; font-size: 15px; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: #23423a60; }
+.testimonial-google:hover { text-decoration-color: currentColor; }
+.testimonial-contact { background: var(--vert); color: white; text-align: center; padding-block: clamp(56px, 7vw, 88px); }
+.testimonial-contact .titre { color: inherit; }
+.testimonial-contact p { margin-top: 22px; line-height: 1.8; color: #ffffffd9; }
+.testimonial-contact .btn { margin-top: 30px; background: white; color: var(--vert); border-color: white; }
+.testimonial-contact .btn:hover { background: var(--fond-saumon); }
+.testimonial-contact .btn svg * { fill: none; stroke: currentColor; }
+.testimonial-contact + .bloc-bandeau { margin-top: 0; }
+@media (max-width: 540px) {
+  .bloc-temoignages .temoignage { min-height: 360px; padding-inline: 4px; }
+  .bloc-temoignages blockquote { font-size: 20px; line-height: 1.65; }
+  .testimonial-controls { column-gap: 8px; margin-top: 24px; }
+  .bloc-temoignages .pagination button { width: 28px; }
+  .testimonial-contact .btn { padding-inline: 22px; font-size: 14px; letter-spacing: .1em; }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }

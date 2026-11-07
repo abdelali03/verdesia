@@ -49,7 +49,7 @@ function photoHero(title, image, alt, intro = '') {
 function mapBlock() {
   return `<section class="bloc-gmap mt-xxl location-block" data-width="m" aria-labelledby="location-title"><h2 id="location-title" class="titre titre-l">Retrouvez-nous à Bouskoura</h2><div class="iframe mt-s"><iframe title="Carte : Pépinière Greenouala Verdesia à Bouskoura" src="https://maps.google.com/maps?cid=${site.mapsCid}&output=embed&hl=fr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div><div class="location-details"><div class="adresse texte-gauche"><p class="nom">${site.businessName}</p><p>${site.address}<br>${site.city}</p><p class="location-gps">GPS : ${site.latitude}, ${site.longitude}</p></div><a class="btn btn-primaire" href="${directionsUrl}" target="_blank" rel="noopener noreferrer">Itinéraire ${arrow}</a></div></section>`;
 }
-const accueil = fs.readFileSync('pages/accueil.html', 'utf8');
+const accueil = fs.readFileSync('pages/accueil.html', 'utf8').replaceAll('{{GOOGLE_REVIEWS_URL}}', escape(site.googleReviewsUrl));
 shell('index.html', 'Pépinière & aménagement paysager', accueil, 'page-accueil');
 shell('amenager-mon-jardin.html', 'Aménager mon jardin', accueil, 'page-jardin');
 const projectMain = `<header class="hero projects-hero" data-width="100%"><div class="hero-visuel p-hero" data-surface="visuel"><div class="p-block-xxl" data-width="s"><div class="titraille">${mark}<h1 class="titre titre-xxl">Nos réalisations</h1></div></div><div class="image-fond"><picture><img src="assets/images/projets/bandeau-projets.jpg" alt="" fetchpriority="high"></picture></div></div></header>
