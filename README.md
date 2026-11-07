@@ -9,7 +9,7 @@ Ouvrir `index.html` directement dans un navigateur, ou lancer `npm start`, puis 
 ## Pages
 
 - `index.html` : accueil, thème et disposition Sauvaje.
-- `amenager-mon-jardin.html` : même contenu que l’accueil, comme demandé.
+- `amenager-mon-jardin.html` : introduction avec photo, trois engagements, quatre étapes illustrées en alternance et invitation finale à prendre contact sur WhatsApp ou demander un devis.
 - `realisations.html` : structure Paysage M, 4 exemples affichés directement sans filtres, 2 photos par projet, diaporama indépendant et visionneuse.
 - `devis.html` : grande photo de jardin avec titre superposé et formulaire simplifié, avec neuf prestations et envoi par WhatsApp.
 - `contact.html` : grande photo de patio végétalisé avec titre superposé, téléphone, WhatsApp, formulaire de message, adresse et carte.
@@ -22,7 +22,8 @@ Les pages HTML complètes sont générées à partir de sources faciles à modif
 
 - `data/site.json` : téléphone, réseaux sociaux, adresse et position GPS.
 - `data/projects.json` : textes, catégories et photographies des projets.
-- `pages/accueil.html` : contenu commun à l’accueil et à « Aménager mon jardin ».
+- `pages/accueil.html` : contenu de l’accueil.
+- `pages/jardin.html` : contenu de « Aménager mon jardin », parcours illustré et appels à l’action.
 - `pages/hero-devis.html` et `pages/form-devis.html` : introduction et formulaire du devis.
 - `scripts/build-pages.cjs` : barre, menu, pied de page et composition des pages Contact et Réalisations.
 - `css/reference.css` : base visuelle Sauvaje et polices locales.
@@ -56,7 +57,9 @@ Carte et itinéraires utilisent cette fiche, sans clé d’API. Les horaires ne 
 
 ## Références et contenus provisoires
 
-Le titre, les textes de présentation et d’expertise, les quatre étapes, les six témoignages et la photo principale de l’oiseau de paradis ont été fournis par le client et intégrés dans `pages/accueil.html`. La photo se trouve dans `assets/images/oiseau-de-paradis.jpg`. Le témoignage de Mohammed Magroud, envoyé deux fois, n’apparaît qu’une fois.
+Le titre, les textes de présentation, les quatre étapes et les six témoignages ont été fournis par le client et intégrés dans `pages/accueil.html`. L’introduction commence désormais par « Chez VERDESIA, nous créons et aménageons des jardins adaptés à vos envies et à votre espace. ». La couverture choisie par le client est le jardin méditerranéen avec piscine, enregistré dans `assets/images/jardin-mediterraneen.jpg` ; sa source est consignée dans `assets/asset-sources.json`. L’ancienne photographie de l’oiseau de paradis reste disponible dans les assets. Le témoignage de Mohammed Magroud, envoyé deux fois, n’apparaît qu’une fois.
+
+La section expertise présente quatre icônes SVG au trait fin : crayon et règle, jeune pousse, pelle et fiche de suivi. Chaque icône accompagne un titre de prestation et une courte phrase. La composition comporte deux colonnes sur ordinateur et une colonne sur mobile, sur fond ivoire. Les liens du menu mobile sont présentés sans chevrons.
 
 Les autres photographies de démonstration, les projets et la base de présentation proviennent temporairement de [Sauvaje](https://www.sauvaje.fr/amenagement-jardins-exterieurs), de sa [page de devis](https://www.sauvaje.fr/contact) et de [Paysage M](https://paysagem.ma/projets/). Les références de projets et les visuels encore provisoires devront être remplacés par ceux du client avant publication commerciale. `assets/asset-sources.json` conserve la provenance des images et polices.
 

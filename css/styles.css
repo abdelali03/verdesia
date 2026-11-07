@@ -5,7 +5,7 @@
 body { overflow-x: clip; }
 .brand { display: inline-block; font-family: var(--police-krub); font-size: clamp(23px, 1.25rem + 1vw, 36px); font-weight: 700; font-style: italic; letter-spacing: .12em; line-height: 1.2; white-space: nowrap; }
 .page-accueil .hero-visuel .image-fond img,
-.page-jardin .hero-visuel .image-fond img { object-position: 50% 42%; }
+.page-jardin .hero-visuel .image-fond img { object-position: 50% 50%; }
 .page-accueil .hero-visuel h1,
 .page-jardin .hero-visuel h1 { text-shadow: 0 2px 18px rgb(0 0 0 / .35); }
 #header #menu-bureau { display: none; }
@@ -22,7 +22,6 @@ body { overflow-x: clip; }
 #menu-mobile { z-index: 200; }
 #menu-mobile .brand { font-size: 23px; }
 #menu-mobile .entete .fermer svg * { fill: none; stroke: currentColor; }
-#menu-mobile nav a span { font-size: 26px; color: var(--vert); line-height: 1; }
 #menu-mobile .menu-socials { display: flex; justify-content: center; padding: 16px; color: var(--vert); }
 #menu-mobile .pied a svg * { fill: none; stroke: currentColor; }
 html.modal-open { overflow: hidden; }
@@ -84,6 +83,28 @@ footer .legal button:hover { text-decoration: underline; text-underline-offset: 
   #photo-dialog .photo-close { top: 16px; right: 16px; }
   #photo-dialog .photo-prev { left: 12px; }
   #photo-dialog .photo-next { right: 12px; }
+}
+/* A coherent outline icon and a short message for each area of expertise. */
+.expertise-icons { padding-block: clamp(64px, 7vw, 100px); background: #fcf7ef; color: var(--vert); }
+.expertise-inner { width: min(1120px, calc(100% - clamp(40px, 8vw, 128px))); margin-inline: auto; }
+.expertise-heading { text-align: center; }
+.expertise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px clamp(32px, 5vw, 80px); list-style: none; padding: 0; margin: clamp(36px, 5vw, 60px) 0 0; }
+.expertise-item { display: grid; grid-template-columns: 64px minmax(0, 1fr); align-items: start; gap: 22px; }
+.expertise-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 14px; background: #e6efe8; color: #4f7c68; }
+.expertise-icon svg { display: block; width: 32px; height: 32px; }
+.expertise-text h3 { font-family: var(--police-krub); font-size: 19px; font-weight: 500; line-height: 1.5; color: var(--vert); }
+.expertise-text p { margin-top: 9px; font-size: 15px; line-height: 1.8; color: #53675d; text-wrap: pretty; }
+@media (max-width: 700px) {
+  .expertise-inner { max-width: 560px; }
+  .expertise-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .expertise-item { grid-template-columns: 56px minmax(0, 1fr); gap: 18px; padding-block: 25px; }
+  .expertise-item:first-child { padding-top: 0; }
+  .expertise-item:last-child { padding-bottom: 0; }
+  .expertise-item + .expertise-item { border-top: 1px solid #23423a14; }
+  .expertise-icon { width: 56px; height: 56px; border-radius: 12px; }
+  .expertise-icon svg { width: 29px; height: 29px; }
+  .expertise-text h3 { font-size: 17px; }
+  .expertise-text p { margin-top: 7px; font-size: 14px; line-height: 1.75; }
 }
 /* Spacious editorial testimonials, with native touch scrolling. */
 .bloc-temoignages { margin-top: 0; padding-block: clamp(64px, 8vw, 112px); background: #fcf7ef; color: var(--vert); }

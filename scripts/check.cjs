@@ -42,6 +42,5 @@ for (const page of ['contact.html', 'devis.html']) {
   if (!htmlByPage.get(page).includes(`${location.latitude}, ${location.longitude}`)) errors.push(`${page}: GPS missing`);
   if (!htmlByPage.get(page).includes(`cid=${location.mapsCid}`)) errors.push(`${page}: wrong map`);
 }
-if (htmlByPage.get('index.html').match(/<main[^>]*>([\s\S]*?)<\/main>/)[1] !== htmlByPage.get('amenager-mon-jardin.html').match(/<main[^>]*>([\s\S]*?)<\/main>/)[1]) errors.push('Home and garden page contents differ');
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 console.log(`OK: ${pages.length} pages, local links and anchors, ${assets.length} assets, ${projects.length} projects, shared contact data, valid JavaScript.`);

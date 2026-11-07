@@ -3,6 +3,20 @@
   "note": "Contenus et visuels provisoires, ?? remplacer par ceux du client avant publication.",
   "files": [
     {
+      "url": "https://media.admagazine.fr/photos/64888b76261b65c3279fe244/16%3A9/w_1280%2Cc_limit/BJ6A6114_1.jpg",
+      "local": "assets/images/jardin-mediterraneen.jpg",
+      "source": "https://www.admagazine.fr/article/quelles-plantes-jardin-mediterraneen",
+      "usage": "Photo de couverture choisie par le client : jardin méditerranéen avec piscine et terrasse."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1597868165956-03a6827955b1?auto=format&fit=crop&w=900&q=85",
+      "local": "assets/images/expertise-plantation.jpg",
+      "photographer": "Jonathan Kemper",
+      "source": "https://unsplash.com/photos/hands-planting-seedling-in-garden-4z3lnwEvZQw",
+      "license": "Unsplash License",
+      "usage": "Photographie illustrative du geste de plantation dans la section expertise."
+    },
+    {
       "url": "https://www.sauvaje.fr/wp-content/uploads/miniatures/38314/amenagement-paysager-16_9-2000.webp",
       "local": "assets/images/hero-01.webp"
     },
