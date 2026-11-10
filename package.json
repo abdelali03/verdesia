@@ -6,6 +6,6 @@
   "scripts": {
     "start": "node server.cjs",
     "build": "node scripts/build-pages.cjs",
-    "check": "node --check js/main.js && node --check js/pages.js && node scripts/check.cjs"
+    "check": "node --check js/main.js && node --check js/pages.js && node --check js/i18n.js && node scripts/check.cjs && node scripts/check-i18n.cjs"
   }
 }

@@ -1,0 +1,49 @@
+/* The language control stays visible on desktop and small screens. */
+#header .language-toggle {
+  display: inline-flex; flex: none; align-items: center; justify-content: center;
+  gap: 7px; min-height: 42px; padding: 7px 12px; border: 1px solid currentColor;
+  border-radius: 24px; color: inherit; background: transparent;
+  font: 13px/1.5 Arial, Tahoma, sans-serif; white-space: nowrap; direction: ltr;
+}
+.language-toggle .active-language { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.language-toggle:hover { background: rgb(128 128 128 / .12); }
+html[lang=ar-MA] { --police-krub: Tahoma, Arial, sans-serif; --police-cossette: Tahoma, Arial, sans-serif; }
+html[lang=ar-MA] body { font-family: Tahoma, Arial, sans-serif; }
+html[lang=ar-MA] :is(h1, h2, h3, p, a, button, label, input, select, textarea, blockquote) { letter-spacing: normal !important; }
+html[lang=ar-MA] :is(.titre, .garden-copy h1, .garden-step h3, .garden-process-heading h2, .garden-closing h2) { line-height: 1.55; }
+html[lang=ar-MA] :is(.garden-copy h1 em, .garden-process-heading h2 em, .garden-closing h2 em) { font-family: Tahoma, Arial, sans-serif; font-style: normal; }
+html[lang=ar-MA] :is(.brand, a[href^="tel:"], input[type=tel], input[type=email], .location-gps, .photo-counter) { direction: ltr; unicode-bidi: isolate; }
+html[lang=ar-MA] .brand { font-family: Arial, sans-serif; }
+html[lang=ar-MA] :is(.texte-gauche, .contact-options, .location-block > h2, #request-summary, .formulaire button.text-link) { text-align: right; }
+html[lang=ar-MA] .project-description { padding-right: 0; padding-left: 45px; }
+html[lang=ar-MA] .garden-step-kicker > span { border-right: 0; padding-right: 0; border-left: 1px solid #23423a30; padding-left: 18px; }
+html[lang=ar-MA] .garden-promises li + li { border-left: 0; padding-left: 0; border-right: 1px solid #23423a26; padding-right: 30px; }
+html[lang=ar-MA] :is(.btn, .cta, .garden-inspiration, .garden-projects-link) > svg { transform: scaleX(-1); }
+/* Keep carousel geometry LTR: JS uses positive scrollLeft and fixed arrow keys. */
+.project-track, .bloc-temoignages .elements, .testimonial-controls { direction: ltr; }
+html[lang=ar-MA] .bloc-temoignages .element { direction: rtl; }
+html[lang=ar-MA] .garden-photo-preview figcaption { direction: auto; unicode-bidi: plaintext; }
+html[lang=ar-MA] #menu-mobile { left: 0; right: auto; text-align: right; translate: -100% 0; }
+html[lang=ar-MA] #menu-mobile[open] { translate: 0 0; }
+html[lang=ar-MA] #menu-mobile nav a { text-align: right; }
+html[lang=ar-MA] #menu-mobile .entete .fermer { margin-left: 0; margin-right: auto; }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #header #menu-bureau .label { font-size: 12px; padding-inline: 5px; }
+  #header .actions { gap: 8px; }
+  #header .actions .cta { padding-inline: 12px; }
+}
+@media (max-width: 767px) {
+  #header .language-toggle { gap: 5px; padding-inline: 9px; min-height: 40px; font-size: 12px; }
+  html[lang=ar-MA] .project-description { padding-left: 0; text-align: right; }
+  html[lang=ar-MA] .garden-promises li + li { border-right: 0; padding-right: 0; }
+  html[lang=ar-MA] .garden-step-kicker > span { padding-left: 14px; }
+}
+@media (max-width: 540px) {
+  #header .actions { gap: 8px; }
+  #header .actions .telephone { display: none; }
+}
+@media (max-width: 380px) {
+  #header > div { gap: 8px; }
+  #header .brand { font-size: 19px; }
+  #header .language-toggle { padding-inline: 7px; }
+}

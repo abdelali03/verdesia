@@ -3,6 +3,7 @@
   'use strict';
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const t = value => window.verdesiaI18n?.t(value) || value;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const backToTop = $('#back-to-top');
   function updateTopButton() { backToTop.hidden = window.scrollY < 400; }
@@ -144,14 +145,14 @@
       if (!form.reportValidity()) {
         return;
       }
-      const lines = [form.dataset.whatsappForm === 'devis' ? 'Bonjour Verdesia, je souhaite demander un devis.' : 'Bonjour Verdesia, je souhaite vous contacter.', ''];
+      const lines = [t(form.dataset.whatsappForm === 'devis' ? 'Bonjour Verdesia, je souhaite demander un devis.' : 'Bonjour Verdesia, je souhaite vous contacter.'), ''];
       const data = new FormData(form);
       Object.entries(fieldNames).forEach(([key, label]) => {
         const value = data.get(key);
         if (!value || !String(value).trim()) return;
         const select = form.elements.namedItem(key);
-        const displayed = select?.tagName === 'SELECT' ? select.selectedOptions[0].textContent.trim() : String(value).trim();
-        lines.push(`${label} : ${displayed}`);
+        const displayed = select?.tagName === 'SELECT' ? t(select.selectedOptions[0].textContent.trim()) : String(value).trim();
+        lines.push(`${t(label)} : ${displayed}`);
       });
       const message = lines.join('\n');
       const whatsappUrl = `https://wa.me/${document.body.dataset.whatsapp}?text=${encodeURIComponent(message)}`;

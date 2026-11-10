@@ -23,14 +23,14 @@ for (const [page, html] of htmlByPage) {
   if (/<script[^>]+https?:/.test(html)) errors.push(`${page}: unexpected remote script`);
   if (/<script[^>]+ld\+json/.test(html)) errors.push(`${page}: temporary reviews in structured data`);
 }
-for (const filename of ['css/reference.css', 'css/styles.css', 'css/pages.css']) {
+for (const filename of ['css/reference.css', 'css/styles.css', 'css/pages.css', 'css/i18n.css']) {
   for (const match of fs.readFileSync(filename, 'utf8').matchAll(/url\(([^)]+)\)/g)) {
     const url = match[1].replace(/^['"]|['"]$/g, '');
     if (url.startsWith('data:')) continue;
     if (!fs.existsSync(path.resolve(path.dirname(filename), url))) errors.push(`Missing CSS asset: ${url}`);
   }
 }
-for (const filename of ['js/main.js', 'js/pages.js']) new Script(fs.readFileSync(filename, 'utf8'), { filename });
+for (const filename of ['js/main.js', 'js/pages.js', 'js/i18n.js']) new Script(fs.readFileSync(filename, 'utf8'), { filename });
 const assets = JSON.parse(fs.readFileSync('assets/asset-sources.json', 'utf8')).files;
 for (const asset of assets) if (!fs.existsSync(asset.local) || !fs.statSync(asset.local).size) errors.push(`Missing/empty asset: ${asset.local}`);
 const projects = JSON.parse(fs.readFileSync('data/projects.json', 'utf8'));

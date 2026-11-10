@@ -18,6 +18,8 @@ Toutes les pages partagent la barre flottante avec les liens horizontaux sur ord
 
 ## Modifier puis reconstruire
 
+Le bouton **FR / العربية** de la barre du haut bascule les cinq pages entre le français et la darija marocaine en caractères arabes. Le choix est conservé dans le navigateur et propagé dans les liens (`?lang=ar` ou `?lang=fr`). Le changement se fait sans rechargement : les champs remplis et les photos sélectionnées restent en place. Les messages WhatsApp suivent la langue choisie. `js/i18n.js` contient les traductions et `css/i18n.css` les adaptations de lecture de droite à gauche. Les noms des auteurs des avis et la marque restent inchangés.
+
 Les pages HTML complètes sont générées à partir de sources faciles à modifier :
 
 - `data/site.json` : téléphone, réseaux sociaux, adresse et position GPS.
