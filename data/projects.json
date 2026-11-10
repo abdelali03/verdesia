@@ -1,54 +1,185 @@
 [
   {
     "id": "projet-1",
-    "name": "Fairmont Royal Palm",
-    "place": "Villa 106 - Marrakech",
-    "category": "immobilier",
-    "client": "Domaine Royal Palm",
-    "service": "Travaux paysagers",
-    "year": "2025",
-    "images": [
-      "assets/images/projets/projet-01-01.jpeg",
-      "assets/images/projets/projet-01-02.jpeg"
+    "name": "Beverly ville verte, Villa 77",
+    "place": "Bouskoura",
+    "service": "Aménagement paysager.",
+    "cover": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg",
+    "featured": [
+      "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg",
+      "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (5).jpeg"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00 (1).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (1).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (2).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (3).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (4).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (5).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.02.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 11.02.23.jpeg"
+      }
     ]
   },
   {
     "id": "projet-2",
-    "name": "Fairmont Royal Palm",
-    "place": "Villa 101 - Marrakech",
-    "category": "immobilier",
-    "client": "Domaine Royal Palm",
-    "service": "Travaux paysagers",
-    "year": "2024",
-    "images": [
-      "assets/images/projets/projet-02-01.jpeg",
-      "assets/images/projets/projet-02-02.jpeg"
+    "name": "Beverly ville verte, Villa 99",
+    "place": "Bouskoura",
+    "service": "Aménagement paysager.",
+    "cover": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg",
+    "featured": [
+      "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg",
+      "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40.jpeg"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.32.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (1).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (2).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (3).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (5).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (6).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40 (1).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40 (2).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40.jpeg"
+      },
+      {
+        "type": "video",
+        "src": "assets/images/projets/projet2/WhatsApp Video 2026-11-09 at 11.02.32.mp4"
+      },
+      {
+        "type": "video",
+        "src": "assets/images/projets/projet2/WhatsApp Video 2026-11-09 at 11.02.38.mp4"
+      }
     ]
   },
   {
-    "id": "projet-12",
-    "name": "Tramway",
-    "place": "Rabat / Salé",
-    "category": "publics",
-    "client": "Société du Tramway de Rabat / Salé",
-    "service": "Travaux Paysager",
-    "year": "24 mois / 2018",
-    "images": [
-      "assets/images/projets/projet-12-01.jpg",
-      "assets/images/projets/projet-12-02.jpg"
+    "id": "projet-3",
+    "name": "Ryad Bouskoura",
+    "place": "Bouskoura",
+    "service": "Aménagement paysager.",
+    "cover": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (2).jpeg",
+    "featured": [
+      "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (2).jpeg"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (2).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (1).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (3).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04.jpeg"
+      }
     ]
   },
   {
-    "id": "projet-24",
-    "name": "Usine Bombardier",
-    "place": "Casablanca",
-    "category": "industriels",
-    "client": "Bombardier - CTP Maroc",
-    "service": "Travaux Paysagers et autobloquant",
-    "year": "6 mois / 2014",
-    "images": [
-      "assets/images/projets/projet-24-01.jpg",
-      "assets/images/projets/projet-24-02.jpg"
+    "id": "projet-4",
+    "name": "Berrechid",
+    "place": "Berrechid",
+    "service": "Aménagement paysager.",
+    "description": "Plantation de palmiers Washingtonia et Syagrus romanzoffiana.",
+    "cover": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (3).jpeg",
+    "featured": [
+      "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (3).jpeg"
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (3).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (1).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (2).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (4).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50.jpeg"
+      },
+      {
+        "type": "video",
+        "src": "assets/images/projets/projet4/WhatsApp Video 2026-11-09 at 11.17.19.mp4"
+      }
     ]
   }
 ]

@@ -10,13 +10,29 @@
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' }));
   updateTopButton();
 
-  const projectCarousels = [];
-  const visibility = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const control = projectCarousels.find(item => item.element === entry.target);
-      if (control) control.setVisible(entry.isIntersecting);
+  const videoVisibility = new Map();
+  function syncVideos() {
+    const blocked = document.hidden || document.querySelector('dialog[open]');
+    videoVisibility.forEach((visible, video) => {
+      if (visible && !blocked && !reducedMotion.matches) video.play().catch(() => {});
+      else video.pause();
     });
-  }, { threshold: .4 });
+  }
+  const visibility = new IntersectionObserver(entries => {
+    entries.forEach(entry => videoVisibility.set(entry.target, entry.isIntersecting && entry.intersectionRatio >= .6));
+    syncVideos();
+  }, { threshold: [0, .6] });
+  $$('.project-slide video').forEach(video => {
+    video.muted = true;
+    videoVisibility.set(video, false);
+    visibility.observe(video);
+  });
+  document.addEventListener('visibilitychange', syncVideos);
+  reducedMotion.addEventListener('change', syncVideos);
+  $$('dialog').forEach(dialog => {
+    dialog.addEventListener('close', syncVideos);
+    dialog.addEventListener('toggle', syncVideos);
+  });
   $$('[data-carousel]').forEach((element, carouselIndex) => {
     const track = $('.project-track', element);
     const slides = $$('.project-slide', element);
@@ -24,17 +40,14 @@
     const previous = $('.project-prev', element);
     const next = $('.project-next', element);
     let active = 0;
-    let visible = false;
-    let paused = false;
-    let timer = null;
     let scrolling = false;
     slides.forEach((slide, index) => { slide.id = `project-${carouselIndex + 1}-photo-${index + 1}`; });
     const buttons = slides.map((slide, index) => {
       const button = document.createElement('button');
       button.type = 'button';
-      button.setAttribute('aria-label', `Photo ${index + 1} sur ${slides.length}`);
+      button.setAttribute('aria-label', `${$('video', slide) ? 'Vidéo' : 'Photo'} ${index + 1} sur ${slides.length}`);
       button.setAttribute('aria-controls', slide.id);
-      button.addEventListener('click', () => { goTo(index); restart(); });
+      button.addEventListener('click', () => goTo(index));
       pagination.append(button);
       return button;
     });
@@ -47,18 +60,13 @@
       track.scrollTo({ left: index * track.clientWidth, behavior: smooth && !reducedMotion.matches ? 'smooth' : 'instant' });
       update(index);
     }
-    function restart() {
-      clearInterval(timer);
-      if (!visible || paused || document.hidden || reducedMotion.matches || document.querySelector('dialog[open]') || element.closest('[hidden]')) return;
-      timer = setInterval(() => goTo(active + 1), 5000);
-    }
-    previous.addEventListener('click', () => { goTo(active - 1); restart(); });
-    next.addEventListener('click', () => { goTo(active + 1); restart(); });
+    previous.addEventListener('click', () => goTo(active - 1));
+    next.addEventListener('click', () => goTo(active + 1));
     track.addEventListener('keydown', event => {
+      if (event.target.tagName === 'VIDEO') return;
       if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
       goTo(event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : active + (event.key === 'ArrowRight' ? 1 : -1));
-      restart();
     });
     track.addEventListener('scroll', () => {
       if (scrolling) return;
@@ -68,26 +76,30 @@
         scrolling = false;
       });
     }, { passive: true });
-    element.addEventListener('mouseenter', () => { paused = true; restart(); });
-    element.addEventListener('mouseleave', () => { paused = element.contains(document.activeElement); restart(); });
-    element.addEventListener('focusin', () => { paused = true; restart(); });
-    element.addEventListener('focusout', event => { paused = element.contains(event.relatedTarget); restart(); });
-    track.addEventListener('pointerdown', () => { paused = true; restart(); });
-    track.addEventListener('pointerup', () => { paused = element.matches(':hover') || element.contains(document.activeElement); restart(); });
-    document.addEventListener('visibilitychange', restart);
-    reducedMotion.addEventListener('change', restart);
-    $$('dialog').forEach(dialog => { dialog.addEventListener('close', restart); dialog.addEventListener('toggle', restart); });
     new ResizeObserver(() => { if (track.clientWidth) goTo(active, false); }).observe(track);
-    const control = { element, setVisible(value) { visible = value; restart(); }, reset() { goTo(0, false); restart(); } };
-    projectCarousels.push(control);
-    visibility.observe(element);
     update(0);
   });
   const fieldNames = {
     nom: 'Nom', prenom: 'Prénom', ville: 'Ville', email: 'Email', telephone: 'Téléphone',
-    service: 'Votre demande', description: 'Description', objet: 'Sujet', demande: 'Votre message',
+    service: 'Type de projet', objet: 'Sujet', demande: 'Votre message',
   };
   $$('[data-whatsapp-form]').forEach(form => {
+    const input = $('input[type="file"]', form);
+    const preview = $('.garden-photo-preview', form);
+    let previewUrl;
+    function updatePhoto() {
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      const file = input.files[0];
+      input.setCustomValidity(file && (!file.type.startsWith('image/') || file.size > 10 * 1024 * 1024) ? 'Choisissez une image de moins de 10 Mo.' : '');
+      preview.hidden = !file || !input.validity.valid;
+      if (!preview.hidden) {
+        previewUrl = URL.createObjectURL(file);
+        $('img', preview).src = previewUrl;
+      } else $('img', preview).removeAttribute('src');
+      if (!input.validity.valid) input.reportValidity();
+    }
+    input?.addEventListener('change', updatePhoto);
+    $('[data-remove-photo]', form)?.addEventListener('click', () => { input.value = ''; updatePhoto(); });
     form.addEventListener('submit', event => {
       event.preventDefault();
       if (!form.reportValidity()) {
@@ -105,6 +117,19 @@
       const message = lines.join('\n');
       $('#request-summary').textContent = message;
       $('#request-send').href = `https://wa.me/${document.body.dataset.whatsapp}?text=${encodeURIComponent(message)}`;
+      const file = input?.files[0];
+      const note = $('#request-photo-note');
+      const share = $('#request-share');
+      const canShare = file && typeof navigator.canShare === 'function' && navigator.canShare({ files: [file] });
+      note.hidden = !file;
+      note.textContent = file ? canShare ? `Photo sélectionnée : ${file.name}. Utilisez « Partager avec la photo », puis choisissez WhatsApp et notre contact. Si vous ouvrez WhatsApp avec le bouton ci-dessous, joignez la photo manuellement.` : `Photo sélectionnée : ${file.name}. Après avoir ouvert WhatsApp, joignez cette photo à votre message avec le bouton de pièce jointe.` : '';
+      share.hidden = !canShare;
+      share.onclick = canShare ? async () => {
+        try { await navigator.share({ text: message, files: [file] }); }
+        catch (error) {
+          if (error.name !== 'AbortError') note.textContent = 'Le partage de la photo n’est pas disponible. Ouvrez WhatsApp ci-dessous et joignez votre photo au message.';
+        }
+      } : null;
       $('#request-dialog').showModal();
       document.documentElement.classList.add('modal-open');
     });

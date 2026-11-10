@@ -34,7 +34,28 @@ for (const filename of ['js/main.js', 'js/pages.js']) new Script(fs.readFileSync
 const assets = JSON.parse(fs.readFileSync('assets/asset-sources.json', 'utf8')).files;
 for (const asset of assets) if (!fs.existsSync(asset.local) || !fs.statSync(asset.local).size) errors.push(`Missing/empty asset: ${asset.local}`);
 const projects = JSON.parse(fs.readFileSync('data/projects.json', 'utf8'));
-if (projects.length !== 4 || projects.some(project => project.images.length !== 2)) errors.push('Expected exactly 4 projects with 2 photos each');
+if (projects.length !== 4) errors.push('Expected exactly 4 projects');
+for (const [index, project] of projects.entries()) {
+  const folder = `assets/images/projets/projet${index + 1}`;
+  const expected = fs.readdirSync(folder).filter(file => /\.(jpe?g|png|webp|mp4)$/i.test(file)).map(file => `${folder}/${file}`).sort();
+  const actual = project.media.map(item => item.src).sort();
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) errors.push(`${project.id}: photos or videos missing/duplicated`);
+  for (const item of project.media) {
+    if (!fs.existsSync(item.src)) errors.push(`${project.id}: missing media ${item.src}`);
+    if (item.type !== (/\.mp4$/i.test(item.src) ? 'video' : 'image')) errors.push(`${project.id}: incorrect media type`);
+    if (!htmlByPage.get('realisations.html').includes(item.src)) errors.push(`${project.id}: media not rendered`);
+  }
+  for (const image of project.featured) {
+    if (!actual.includes(image) || !htmlByPage.get('index.html').includes(image)) errors.push(`${project.id}: featured image missing`);
+  }
+}
+if (/Croquis|galerie-grand-|Fairmont|Bombardier|Tramway/.test(htmlByPage.get('index.html') + htmlByPage.get('realisations.html'))) errors.push('Stale gallery or project content');
+const quote = htmlByPage.get('devis.html');
+for (const field of ['nom', 'telephone', 'ville', 'service']) {
+  if (!new RegExp(`<(?:input|select)[^>]+name="${field}"[^>]+required`).test(quote)) errors.push(`Missing required quote field ${field}`);
+}
+if (/<input[^>]+name="email"[^>]+required/.test(quote) || /<(?:input|textarea)[^>]+name="(?:prenom|description)"/.test(quote)) errors.push('Quote form has unwanted fields');
+if (!/<input[^>]+type="file"[^>]+accept="image\/\*"/.test(quote)) errors.push('Missing optional garden photo');
 const location = JSON.parse(fs.readFileSync('data/site.json', 'utf8'));
 if (!htmlByPage.get('devis.html').includes('data-whatsapp-form="devis"')) errors.push('Missing WhatsApp quote form');
 if (htmlByPage.get('devis.html').includes('formsubmit.co')) errors.push('Unexpected email submission service');

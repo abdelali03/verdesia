@@ -83,41 +83,71 @@
 
   let photoLinks = [];
   let photoIndex = 0;
+  const photoImage = $('figure img', photo);
+  const photoVideo = $('figure video', photo);
+  function playDialogVideo() {
+    if (!photo.open || photoVideo.hidden || document.hidden) { photoVideo.pause(); return; }
+    photoVideo.play().catch(() => {});
+  }
   function showPhoto(index) {
     photoIndex = (index + photoLinks.length) % photoLinks.length;
     const link = photoLinks[photoIndex];
     const originalImage = $('img', link);
-    $('figure img', photo).src = link.href;
-    $('figure img', photo).alt = originalImage?.alt || 'Réalisation paysagère';
-    $('figcaption', photo).textContent = originalImage?.alt || '';
+    photoVideo.pause();
+    const isVideo = link.dataset.mediaType === 'video';
+    photoImage.hidden = isVideo;
+    photoVideo.hidden = !isVideo;
+    const caption = originalImage?.alt || link.dataset.caption || 'Réalisation paysagère';
+    if (isVideo) {
+      photoVideo.src = link.dataset.src;
+      photoVideo.muted = true;
+      photoVideo.setAttribute('aria-label', caption);
+      playDialogVideo();
+    } else {
+      photoVideo.removeAttribute('src');
+      photoVideo.load();
+      photoImage.src = link.href;
+      photoImage.alt = caption;
+    }
+    $('figcaption', photo).textContent = caption;
     $('.photo-counter', photo).textContent = `${photoIndex + 1} / ${photoLinks.length}`;
     $('.photo-prev', photo).hidden = photoLinks.length < 2;
     $('.photo-next', photo).hidden = photoLinks.length < 2;
   }
-  $$('a.lightbox').forEach(link => link.addEventListener('click', event => {
+  $$('.lightbox').forEach(link => link.addEventListener('click', event => {
     event.preventDefault();
-    photoLinks = $$('a.lightbox', link.closest('[role="tabpanel"], .project-carousel'));
+    photoLinks = $$('.lightbox', link.closest('[role="tabpanel"], .project-carousel'));
     showPhoto(photoLinks.indexOf(link));
     openDialog(photo);
+    playDialogVideo();
   }));
+  photo.addEventListener('close', () => { photoVideo.pause(); });
+  document.addEventListener('visibilitychange', playDialogVideo);
   $('.photo-close', photo).addEventListener('click', () => photo.close());
   $('.photo-prev', photo).addEventListener('click', () => showPhoto(photoIndex - 1));
   $('.photo-next', photo).addEventListener('click', () => showPhoto(photoIndex + 1));
   photo.addEventListener('keydown', event => {
-    if (event.key === 'ArrowRight') { event.preventDefault(); showPhoto(photoIndex + 1); }
-    if (event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(photoIndex - 1); }
+    if (event.target === photoVideo) return;
+    if (['ArrowRight', 'ArrowDown'].includes(event.key)) { event.preventDefault(); showPhoto(photoIndex + 1); }
+    if (['ArrowLeft', 'ArrowUp'].includes(event.key)) { event.preventDefault(); showPhoto(photoIndex - 1); }
   });
   photo.addEventListener('click', event => {
     if (event.target === $('figure', photo)) photo.close();
   });
-  let touchStartX = null;
-  photo.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
-  photo.addEventListener('touchend', event => {
-    if (touchStartX === null) return;
-    const distance = event.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(distance) > 60) showPhoto(photoIndex + (distance < 0 ? 1 : -1));
-    touchStartX = null;
+  let touchStart = null;
+  photo.addEventListener('touchstart', event => {
+    const touch = event.changedTouches[0];
+    touchStart = { x: touch.clientX, y: touch.clientY };
   }, { passive: true });
+  photo.addEventListener('touchend', event => {
+    if (!touchStart) return;
+    const dx = event.changedTouches[0].clientX - touchStart.x;
+    const dy = event.changedTouches[0].clientY - touchStart.y;
+    const distance = Math.abs(dy) > Math.abs(dx) ? dy : dx;
+    if (Math.abs(distance) > 60) showPhoto(photoIndex + (distance < 0 ? 1 : -1));
+    touchStart = null;
+  }, { passive: true });
+  photo.addEventListener('touchcancel', () => { touchStart = null; });
 
   if ($('.bloc-temoignages .carrousel')) {
   const carousel = $('.bloc-temoignages .carrousel');
