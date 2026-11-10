@@ -9,8 +9,6 @@
 .home-project-card figure { margin: 0; }
 .home-project-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; transition: filter .2s; }
 .home-project-card:hover img { filter: brightness(.9); }
-.home-project-card figcaption { padding-top: 14px; display: flex; flex-direction: column; gap: 5px; font-size: 17px; line-height: 1.5; }
-.home-project-card small { font-size: 13px; }
 .home-projects-link { display: flex; width: fit-content; margin: 36px auto 0; }
 .project-row { scroll-margin-top: 140px; }
 .project-detail { margin-top: 24px; line-height: 1.8; }
@@ -32,7 +30,6 @@
 .formulaire input[type=file]::file-selector-button { padding: 8px 12px; margin-right: 12px; border: 0; background: var(--fond-vert-clair); color: var(--vert); font: inherit; cursor: pointer; }
 @media (max-width: 767px) {
   .home-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
-  .home-project-card figcaption { font-size: 14px; }
   .project-carousel :is(.project-prev, .project-next) { opacity: 1; }
   .home-projects-link { font-size: 13px; }
 }
