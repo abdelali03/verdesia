@@ -36,16 +36,19 @@
         </div></div>
       </div>
       <div class="element garden-photo-field">
-        <label for="photo-jardin">Photo du jardin (facultatif)</label>
-        <div class="saisie"><input type="file" id="photo-jardin" name="photo" accept="image/*" aria-describedby="photo-help"></div>
-        <p id="photo-help" class="photo-help">Une photo, jusqu’à 10 Mo. Vous pourrez la partager avec votre demande si votre appareil le permet, ou la joindre directement dans WhatsApp.</p>
-        <div class="garden-photo-preview" hidden><img alt="Aperçu de votre jardin"><button type="button" class="text-link" data-remove-photo>Retirer la photo</button></div>
+        <label for="photo-jardin">Photos du jardin (facultatif)</label>
+        <div class="saisie"><input type="file" id="photo-jardin" name="photos" accept="image/*" multiple aria-describedby="photo-help photo-status"></div>
+        <p id="photo-help" class="photo-help">Ajoutez plusieurs photos, en une ou plusieurs fois. Jusqu’à 10 Mo par photo. Les photos seront incluses dans le partage si votre appareil le permet.</p>
+        <p id="photo-status" class="photo-help" role="status" aria-live="polite"></p>
+        <div class="garden-photo-preview" hidden></div>
+        <button type="button" class="text-link add-garden-photos" data-add-photos hidden>Ajouter d’autres photos</button>
       </div>
       <div class="element bouton mt-xs">
         <button type="submit" class="btn btn-primaire"><span>Envoyer par WhatsApp</span><svg aria-hidden="true" viewBox="0 0 24 18" width="24" height="18"><path d="m14.5 3.5 5.5 5.5-5.5 5.5M3 9h17" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
       </div>
     </div>
-    <p class="form-delivery-note">Les champs marqués d’un * sont obligatoires. Vérifiez votre demande, puis envoyez-la à notre équipe sur WhatsApp.</p>
+    <p class="form-delivery-note">Les champs marqués d’un * sont obligatoires. Sans photo, votre demande s’ouvre directement dans WhatsApp. Avec des photos, choisissez WhatsApp puis le contact Verdesia (+212 660 273737) dans le menu de partage de votre appareil.</p>
+    <p class="form-delivery-status photo-help" role="status" aria-live="polite"></p>
     <div class="mt-s texte-gauche texte-leger" data-contenu><p>Vos coordonnées seront utilisées uniquement pour répondre à votre demande. <button type="button" class="text-link" data-info="privacy">En savoir plus.</button></p></div>
   </form>
 </div>

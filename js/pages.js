@@ -86,21 +86,60 @@
   $$('[data-whatsapp-form]').forEach(form => {
     const input = $('input[type="file"]', form);
     const preview = $('.garden-photo-preview', form);
-    let previewUrl;
-    function updatePhoto() {
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-      const file = input.files[0];
-      input.setCustomValidity(file && (!file.type.startsWith('image/') || file.size > 10 * 1024 * 1024) ? 'Choisissez une image de moins de 10 Mo.' : '');
-      preview.hidden = !file || !input.validity.valid;
-      if (!preview.hidden) {
-        previewUrl = URL.createObjectURL(file);
-        $('img', preview).src = previewUrl;
-      } else $('img', preview).removeAttribute('src');
-      if (!input.validity.valid) input.reportValidity();
+    const addPhotos = $('[data-add-photos]', form);
+    const photoStatus = $('#photo-status', form);
+    const deliveryStatus = $('.form-delivery-status', form);
+    let selectedPhotos = [];
+    let previewUrls = [];
+    function renderPhotos() {
+      previewUrls.forEach(url => URL.revokeObjectURL(url));
+      previewUrls = [];
+      preview.replaceChildren();
+      preview.hidden = !selectedPhotos.length;
+      addPhotos.hidden = !selectedPhotos.length;
+      selectedPhotos.forEach(file => {
+        const figure = document.createElement('figure');
+        const image = document.createElement('img');
+        const caption = document.createElement('figcaption');
+        const remove = document.createElement('button');
+        const url = URL.createObjectURL(file);
+        previewUrls.push(url);
+        image.src = url;
+        image.alt = `Photo de votre jardin : ${file.name}`;
+        caption.textContent = file.name;
+        remove.type = 'button';
+        remove.className = 'text-link';
+        remove.textContent = 'Retirer';
+        remove.setAttribute('aria-label', `Retirer ${file.name}`);
+        remove.addEventListener('click', () => {
+          selectedPhotos = selectedPhotos.filter(photo => photo !== file);
+          renderPhotos();
+          photoStatus.textContent = selectedPhotos.length ? `${selectedPhotos.length} photo(s) sélectionnée(s).` : 'Aucune photo sélectionnée.';
+          deliveryStatus.textContent = '';
+        });
+        figure.append(image, caption, remove);
+        preview.append(figure);
+      });
     }
-    input?.addEventListener('change', updatePhoto);
-    $('[data-remove-photo]', form)?.addEventListener('click', () => { input.value = ''; updatePhoto(); });
-    form.addEventListener('submit', event => {
+    input?.addEventListener('change', () => {
+      const rejected = [];
+      for (const file of input.files) {
+        if (!file.type.startsWith('image/') || file.size > 10 * 1024 * 1024) { rejected.push(file.name); continue; }
+        if (!selectedPhotos.some(photo => photo.name === file.name && photo.size === file.size && photo.lastModified === file.lastModified)) selectedPhotos.push(file);
+      }
+      input.value = '';
+      renderPhotos();
+      photoStatus.textContent = `${selectedPhotos.length} photo(s) sélectionnée(s).${rejected.length ? ` Fichiers non ajoutés : ${rejected.join(', ')}. Choisissez des images de 10 Mo maximum chacune.` : ''}`;
+      deliveryStatus.textContent = '';
+    });
+    addPhotos?.addEventListener('click', () => input.click());
+    form.addEventListener('reset', () => {
+      selectedPhotos = [];
+      if (preview) renderPhotos();
+      if (photoStatus) photoStatus.textContent = '';
+      if (deliveryStatus) deliveryStatus.textContent = '';
+    });
+    form.addEventListener('submit', async event => {
       event.preventDefault();
       if (!form.reportValidity()) {
         return;
@@ -115,21 +154,27 @@
         lines.push(`${label} : ${displayed}`);
       });
       const message = lines.join('\n');
-      $('#request-summary').textContent = message;
-      $('#request-send').href = `https://wa.me/${document.body.dataset.whatsapp}?text=${encodeURIComponent(message)}`;
-      const file = input?.files[0];
-      const note = $('#request-photo-note');
-      const share = $('#request-share');
-      const canShare = file && typeof navigator.canShare === 'function' && navigator.canShare({ files: [file] });
-      note.hidden = !file;
-      note.textContent = file ? canShare ? `Photo sélectionnée : ${file.name}. Utilisez « Partager avec la photo », puis choisissez WhatsApp et notre contact. Si vous ouvrez WhatsApp avec le bouton ci-dessous, joignez la photo manuellement.` : `Photo sélectionnée : ${file.name}. Après avoir ouvert WhatsApp, joignez cette photo à votre message avec le bouton de pièce jointe.` : '';
-      share.hidden = !canShare;
-      share.onclick = canShare ? async () => {
-        try { await navigator.share({ text: message, files: [file] }); }
-        catch (error) {
-          if (error.name !== 'AbortError') note.textContent = 'Le partage de la photo n’est pas disponible. Ouvrez WhatsApp ci-dessous et joignez votre photo au message.';
+      const whatsappUrl = `https://wa.me/${document.body.dataset.whatsapp}?text=${encodeURIComponent(message)}`;
+      if (form.dataset.whatsappForm === 'devis') {
+        deliveryStatus.textContent = '';
+        if (selectedPhotos.length) {
+          const files = [...selectedPhotos];
+          let canShare = false;
+          try { canShare = typeof navigator.canShare === 'function' && navigator.canShare({ files }); } catch {}
+          if (canShare && typeof navigator.share === 'function') {
+            try { await navigator.share({ text: message, files }); }
+            catch (error) {
+              if (error.name !== 'AbortError') deliveryStatus.textContent = 'Le partage n’a pas pu s’ouvrir. Vos photos sont conservées : réessayez depuis ce bouton.';
+            }
+            return;
+          }
+          deliveryStatus.textContent = 'Votre navigateur ne permet pas de transmettre les photos à WhatsApp. Elles ne sont pas envoyées. Utilisez un appareil proposant le partage de fichiers, ou joignez-les dans WhatsApp après ouverture du message.';
         }
-      } : null;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        return;
+      }
+      $('#request-summary').textContent = message;
+      $('#request-send').href = whatsappUrl;
       $('#request-dialog').showModal();
       document.documentElement.classList.add('modal-open');
     });
