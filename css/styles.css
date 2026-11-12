@@ -1,4 +1,33 @@
 /* Verdesia adaptations. Reference dimensions and typography live in reference.css. */
+/* Native FAQ disclosures remain usable with touch, keyboard and without JS. */
+.home-faq { padding-block: clamp(64px, 8vw, 112px); background: #fcf7ef; color: var(--vert); }
+.home-faq-inner { width: min(1200px, calc(100% - clamp(40px, 8vw, 128px))); margin-inline: auto; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); gap: clamp(36px, 6vw, 88px); align-items: start; }
+.home-faq-eyebrow { font-family: var(--police-cossette); font-size: 13px; letter-spacing: .2em; line-height: 1.6; margin-bottom: 22px; color: #607264; }
+.home-faq-heading h2 { text-align: start; text-wrap: balance; }
+.home-faq-list { min-width: 0; border-top: 1px solid #23423a26; }
+.home-faq-item { border-bottom: 1px solid #23423a26; }
+.home-faq-item > summary { display: grid; grid-template-columns: 28px minmax(0, 1fr) 30px; align-items: center; gap: 16px; padding-block: 26px; cursor: pointer; list-style: none; font-family: var(--police-krub); font-size: clamp(16px, 1.4vw, 19px); font-weight: 500; line-height: 1.65; text-align: start; }
+.home-faq-item > summary::-webkit-details-marker { display: none; }
+.home-faq-item > summary::marker { content: ''; }
+.home-faq-item > summary:hover { color: #4f7c68; }
+.home-faq-number { font-size: 12px; font-weight: 400; color: #607264; direction: ltr; unicode-bidi: isolate; }
+.home-faq-icon { position: relative; width: 30px; height: 30px; border: 1px solid #23423a30; border-radius: 50%; flex: none; }
+.home-faq-icon::before, .home-faq-icon::after { content: ''; position: absolute; background: currentColor; inset: 50% auto auto 50%; width: 12px; height: 1px; transform: translate(-50%, -50%); }
+.home-faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .2s; }
+.home-faq-item[open] .home-faq-icon::after { transform: translate(-50%, -50%) rotate(0); }
+.home-faq-item[open] .home-faq-icon { background: #e6efe8; }
+.home-faq-answer { padding-inline: 44px 46px; padding-bottom: 28px; color: #53675d; font-size: 15px; line-height: 1.9; text-align: start; }
+.home-faq-answer p { margin: 0; }
+.page-accueil .site-footer { margin-top: 0; }
+@media (max-width: 850px) {
+  .home-faq-inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .home-faq-heading h2 { max-width: none; }
+}
+@media (max-width: 540px) {
+  .home-faq-item > summary { grid-template-columns: 22px minmax(0, 1fr) 28px; gap: 10px; padding-block: 22px; }
+  .home-faq-icon { width: 28px; height: 28px; }
+  .home-faq-answer { padding-inline: 32px 0; padding-bottom: 24px; font-size: 14px; }
+}
 :root { color-scheme: light; }
 [hidden] { display: none !important; }
 :focus-visible { outline: 2px solid var(--vert-clair); outline-offset: 6px; }
