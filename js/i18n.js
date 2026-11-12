@@ -239,8 +239,9 @@
   };
   const normalize = value => value.trim().replace(/\s+/g, ' ');
   const reverse = new Map(Object.entries(translations).map(([fr, ar]) => [ar, fr]));
+  const staticLocales = document.documentElement.getAttribute?.('data-static-locales') === 'true';
   let language = 'fr';
-  try { language = new URL(location.href).searchParams.get('lang') || localStorage.getItem('verdesia-language') || 'fr'; } catch {}
+  try { language = new URL(location.href).searchParams.get('lang') || (staticLocales && new URL(location.href).pathname.startsWith('/ar/') ? 'ar' : localStorage.getItem('verdesia-language')) || 'fr'; } catch {}
   language = language === 'ar' ? 'ar' : 'fr';
   document.documentElement.lang = language === 'ar' ? 'ar-MA' : 'fr';
   document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
@@ -275,6 +276,26 @@
   window.verdesiaI18n = { t, get language() { return language; } };
   const textRecords = new WeakMap();
   const attributeRecords = new WeakMap();
+  function localizedPath(url) {
+    const filename = url.pathname.split('/').pop() || 'index.html';
+    url.pathname = (language === 'ar' ? '/ar/' : '/') + (filename === 'index.html' ? '' : filename);
+    url.searchParams.delete('lang');
+    return url;
+  }
+  function syncLocation() {
+    try {
+      const url = new URL(location.href);
+      if (staticLocales) localizedPath(url);
+      else url.searchParams.set('lang', language);
+      history.replaceState(null, '', url);
+      if (staticLocales) {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.href = 'https://verdesia.ma' + url.pathname;
+        const ogURL = document.querySelector('meta[property="og:url"]');
+        if (ogURL) ogURL.setAttribute('content', 'https://verdesia.ma' + url.pathname);
+      }
+    } catch {}
+  }
   function translateText(node) {
     if (!node.textContent.trim() || node.parentElement?.closest('script, style, [data-no-translate], #request-summary, .garden-photo-preview figcaption')) return;
     const current = node.textContent;
@@ -319,8 +340,12 @@
         const message = url.searchParams.get('text');
         const translated = t(message);
         if (translated !== message) { url.searchParams.set('text', translated); element.href = url.href; }
-      } else if (!/^[a-z]+:/i.test(href) && /\.html$/.test(url.pathname)) {
-        if (url.searchParams.get('lang') !== language) { url.searchParams.set('lang', language); element.setAttribute('href', url.pathname.split('/').pop() + url.search + url.hash); }
+      } else if (!/^[a-z]+:/i.test(href) && (/\.html$/.test(url.pathname) || (staticLocales && ['/', '/ar/'].includes(url.pathname)))) {
+        if (staticLocales) {
+          localizedPath(url);
+          const target = url.pathname + url.search + url.hash;
+          if (href !== target) element.setAttribute('href', target);
+        } else if (url.searchParams.get('lang') !== language) { url.searchParams.set('lang', language); element.setAttribute('href', url.pathname.split('/').pop() + url.search + url.hash); }
       }
     }
   }
@@ -346,7 +371,7 @@
     document.documentElement.lang = language === 'ar' ? 'ar-MA' : 'fr';
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     try { localStorage.setItem('verdesia-language', language); } catch {}
-    try { const url = new URL(location.href); url.searchParams.set('lang', language); history.replaceState(null, '', url); } catch {}
+    syncLocation();
     translateTree(document.documentElement);
     updateToggle();
     document.dispatchEvent(new Event('verdesia:languagechange'));
@@ -355,6 +380,7 @@
     document.querySelectorAll('[data-language-toggle]').forEach(button => button.addEventListener('click', () => setLanguage(language === 'fr' ? 'ar' : 'fr')));
     translateTree(document.documentElement);
     updateToggle();
+    if (staticLocales) syncLocation();
     const observer = new MutationObserver(records => {
       records.forEach(record => {
         if (record.type === 'characterData') translateText(record.target);

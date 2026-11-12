@@ -5,7 +5,17 @@
   "description": "Page d’accueil Verdesia en HTML, CSS et JavaScript",
   "scripts": {
     "start": "node server.cjs",
-    "build": "node scripts/build-pages.cjs",
-    "check": "node --check js/main.js && node --check js/pages.js && node --check js/i18n.js && node scripts/check.cjs && node scripts/check-i18n.cjs"
+    "build": "node scripts/build.cjs",
+    "build:pages": "node scripts/build-pages.cjs",
+    "build:production": "node scripts/build-production.cjs",
+    "preview": "node scripts/preview.cjs",
+    "check": "node --check js/main.js && node --check js/pages.js && node --check js/i18n.js && node scripts/check.cjs && node scripts/check-i18n.cjs",
+    "check:dist": "node scripts/check-dist.cjs && node scripts/check-runtime.cjs",
+    "check:images": "node scripts/check-images.cjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "linkedom": "^0.18.15",
+    "sharp": "^0.35.5"
   }
 }
