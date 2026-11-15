@@ -13,8 +13,8 @@ Pour tester la version optimisée avec Node.js 22 : `npm ci`, `npm run build`, `
 ## Pages
 
 - `index.html` : accueil, thème et disposition Sauvaje.
-- `amenager-mon-jardin.html` : introduction avec photo, trois engagements, quatre étapes illustrées en alternance et invitation finale à prendre contact sur WhatsApp ou demander un devis.
-- `realisations.html` : les quatre projets du client, avec 30 photos et 3 vidéos, carrousels indépendants et visionneuse.
+- `amenager-mon-jardin.html` : landing page pour les campagnes publicitaires, avec offre locale, trois engagements, sélection de réalisations, parcours en quatre étapes, témoignage client, formulaire intégré et FAQ. Les appels à l’action conduisent au formulaire ; WhatsApp et le téléphone restent accessibles directement, avec un bouton de contact fixe sur mobile. La photo HERO actuelle est conservée en attendant les nouvelles photos du client.
+- `realisations.html` : les quatre projets du client, avec 26 photos et 3 vidéos, carrousels indépendants et visionneuse. Les jardins réalisés et plantations sont présentés avant les travaux. Les quatre photos centrées sur le gazon sont exclues de l’affichage ; leurs originaux restent conservés.
 - `devis.html` : grande photo de jardin avec titre superposé et formulaire simplifié, avec neuf prestations et envoi par WhatsApp.
 - `contact.html` : grande photo de patio végétalisé avec titre superposé, téléphone, WhatsApp, formulaire de message, adresse et carte.
 
@@ -27,9 +27,10 @@ Le bouton **FR / العربية** de la barre du haut bascule les cinq pages ent
 Les pages HTML complètes sont générées à partir de sources faciles à modifier :
 
 - `data/site.json` : téléphone, réseaux sociaux, adresse et position GPS.
-- `data/projects.json` : textes, catégories et photographies des projets.
+- `data/projects.json` : textes et photographies des projets. `displayOrder` classe les projets, l’ordre de `media` classe les images dans chaque carrousel, `featured` définit les trois photos sélectionnées pour l’accueil et la landing page, et `excludedMedia` conserve la trace des photos de gazon retirées.
 - `pages/accueil.html` : contenu de l’accueil.
-- `pages/jardin.html` : contenu de « Aménager mon jardin », parcours illustré et appels à l’action.
+- `pages/jardin.html` : contenu de la landing page « Aménager mon jardin », avec insertion du formulaire de devis et de la sélection de réalisations.
+- `pages/faq.html` : FAQ partagée entre l’accueil et la landing page, sans numéros ni marque latérale, avec chevrons SVG et titre centré.
 - `pages/hero-devis.html` et `pages/form-devis.html` : introduction et formulaire du devis.
 - `scripts/build-pages.cjs` : barre, menu, pied de page et composition des pages Contact et Réalisations.
 - `css/reference.css` : base visuelle Sauvaje et polices locales.

@@ -58,7 +58,8 @@ function candidates(image, sizes) {
 function sizesFor(img) {
   if (img.closest('.home-project-card')) return '(max-width: 420px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 56px) / 2), (max-width: 1500px) calc((100vw - 128px) / 3), 480px';
   if (img.closest('.project-carousel')) return '(max-width: 767px) calc(100vw - 48px), (max-width: 1248px) calc((100vw - 48px) * 0.586), 704px';
-  if (img.closest('.garden-visual, .garden-step-media')) return '(max-width: 767px) calc(100vw - 40px), (max-width: 1440px) 48vw, 700px';
+  if (img.closest('.garden-result')) return '(max-width: 767px) calc(100vw - 40px), (max-width: 1408px) calc((100vw - 176px) / 3), 411px';
+  if (img.closest('.garden-visual')) return '(max-width: 767px) calc(100vw - 40px), (max-width: 1440px) 48vw, 700px';
   return '100vw';
 }
 async function prepareImage(source) {

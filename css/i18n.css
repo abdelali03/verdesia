@@ -10,13 +10,12 @@
 html[lang=ar-MA] { --police-krub: Tahoma, Arial, sans-serif; --police-cossette: Tahoma, Arial, sans-serif; }
 html[lang=ar-MA] body { font-family: Tahoma, Arial, sans-serif; }
 html[lang=ar-MA] :is(h1, h2, h3, p, a, button, label, input, select, textarea, blockquote) { letter-spacing: normal !important; }
-html[lang=ar-MA] :is(.titre, .garden-copy h1, .garden-step h3, .garden-process-heading h2, .garden-closing h2) { line-height: 1.55; }
-html[lang=ar-MA] :is(.garden-copy h1 em, .garden-process-heading h2 em, .garden-closing h2 em) { font-family: Tahoma, Arial, sans-serif; font-style: normal; }
+html[lang=ar-MA] :is(.titre, .garden-copy h1, .garden-process-heading h2, .garden-contact-copy h2) { line-height: 1.55; }
+html[lang=ar-MA] :is(.garden-copy h1 em, .garden-process-heading h2 em, .garden-contact-copy h2 em) { font-family: Tahoma, Arial, sans-serif; font-style: normal; }
 html[lang=ar-MA] :is(.brand, a[href^="tel:"], input[type=tel], input[type=email], .location-gps, .photo-counter) { direction: ltr; unicode-bidi: isolate; }
 html[lang=ar-MA] .brand { font-family: Arial, sans-serif; }
 html[lang=ar-MA] :is(.texte-gauche, .contact-options, .location-block > h2, #request-summary, .formulaire button.text-link) { text-align: right; }
 html[lang=ar-MA] .project-description { padding-right: 0; padding-left: 45px; }
-html[lang=ar-MA] .garden-step-kicker > span { border-right: 0; padding-right: 0; border-left: 1px solid #23423a30; padding-left: 18px; }
 html[lang=ar-MA] .garden-promises li + li { border-left: 0; padding-left: 0; border-right: 1px solid #23423a26; padding-right: 30px; }
 html[lang=ar-MA] :is(.btn, .cta, .garden-inspiration, .garden-projects-link) > svg { transform: scaleX(-1); }
 /* Keep carousel geometry LTR: JS uses positive scrollLeft and fixed arrow keys. */
@@ -36,7 +35,6 @@ html[lang=ar-MA] #menu-mobile .entete .fermer { margin-left: 0; margin-right: au
   #header .language-toggle { gap: 5px; padding-inline: 9px; min-height: 40px; font-size: 12px; }
   html[lang=ar-MA] .project-description { padding-left: 0; text-align: right; }
   html[lang=ar-MA] .garden-promises li + li { border-right: 0; padding-right: 0; }
-  html[lang=ar-MA] .garden-step-kicker > span { padding-left: 14px; }
 }
 @media (max-width: 540px) {
   #header .actions { gap: 8px; }

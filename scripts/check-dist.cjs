@@ -79,7 +79,18 @@ async function main() {
   const quote = docs.get('devis.html');
   assert(quote.querySelector('input[type="file"][multiple]'));
   assert(!quote.querySelector('input[type="email"]').required);
-  assert.equal(docs.get('realisations.html').querySelectorAll('.project-slide').length, 33);
+  const projects = JSON.parse(fs.readFileSync(path.join(root, 'data/projects.json'), 'utf8'));
+  const mediaCount = projects.reduce((count, p) => count + p.media.length, 0);
+  assert.equal(docs.get('realisations.html').querySelectorAll('.project-slide').length, mediaCount);
+  const featuredCount = projects.reduce((count, p) => count + p.featured.length, 0);
+  assert.equal(docs.get('index.html').querySelectorAll('.home-project-card').length, featuredCount);
+  const landing = docs.get('amenager-mon-jardin.html');
+  assert.equal(landing.querySelectorAll('.garden-result').length, featuredCount);
+  assert(landing.querySelector('#garden-contact #quote-form[data-whatsapp-form="devis"]'));
+  for (const page of ['index.html', 'amenager-mon-jardin.html']) {
+    assert.equal(docs.get(page).querySelectorAll('#faq details').length, 6);
+    assert.equal(docs.get(page).querySelectorAll('.home-faq-number,.home-faq-eyebrow').length, 0);
+  }
   const styleURL = docs.get('index.html').querySelector('link[rel="stylesheet"]').href;
   const css = read(target(styleURL));
   for (const match of css.matchAll(/url\(([^)]+)\)/g)) {
@@ -93,11 +104,10 @@ async function main() {
   assert.equal(read('robots.txt').includes('Disallow: /'), !production);
   assert.equal((read('sitemap.xml').match(/<loc>/g) || []).length, 10);
   for (const forbidden of ['package.json', 'README.md', 'node_modules', '.preview', 'data', 'pages', 'scripts']) assert(!fs.existsSync(path.join(dist, forbidden)), `Source leaked into deployment: ${forbidden}`);
-  // CSS rules and all original image/video/font bytes remain intact in the workspace.
+  // Keep original image/video/font bytes intact while allowing requested design edits.
   const baseline = path.join(root, '.preview/baseline');
   if (fs.existsSync(baseline)) {
     const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
-    for (const name of ['reference.css', 'styles.css', 'pages.css', 'i18n.css']) assert.equal(hash(path.join(root, 'css', name)), hash(path.join(baseline, 'css', name)), `Visual CSS changed: ${name}`);
     function verify(folder) {
       for (const entry of fs.readdirSync(path.join(baseline, folder), { withFileTypes: true })) {
         const relative = path.join(folder, entry.name);
@@ -107,6 +117,6 @@ async function main() {
     }
     verify('assets');
   }
-  console.log(`OK: 10 ${report.environment} pages; ${checkedLinks} local asset/route references; responsive images; SEO; all 33 media slides; unchanged French body structure, wording, CSS and original assets.`);
+  console.log(`OK: 10 ${report.environment} pages; ${checkedLinks} local asset/route references; responsive images; SEO; ${mediaCount} selected media slides; premium galleries; landing form; French source parity and original assets.`);
 }
 main().catch(error => { console.error(error.message); process.exitCode = 1; });

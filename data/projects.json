@@ -4,23 +4,14 @@
     "name": "Beverly ville verte, Villa 77",
     "place": "Bouskoura",
     "service": "Aménagement paysager.",
-    "cover": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg",
+    "cover": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (5).jpeg",
     "featured": [
-      "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg",
       "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (5).jpeg"
     ],
     "media": [
       {
         "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00 (1).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (1).jpeg"
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (5).jpeg"
       },
       {
         "type": "image",
@@ -28,19 +19,11 @@
       },
       {
         "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (3).jpeg"
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (1).jpeg"
       },
       {
         "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (4).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (5).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01.jpeg"
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 11.02.23.jpeg"
       },
       {
         "type": "image",
@@ -48,7 +31,26 @@
       },
       {
         "type": "image",
-        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 11.02.23.jpeg"
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (4).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01 (3).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.01.jpeg"
+      }
+    ],
+    "displayOrder": 2,
+    "excludedMedia": [
+      {
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00.jpeg",
+        "reason": "Photo de gazon retirée de la galerie."
+      },
+      {
+        "src": "assets/images/projets/projet1/WhatsApp Image 2026-11-09 at 10.53.00 (1).jpeg",
+        "reason": "Photo de gazon retirée de la galerie."
       }
     ]
   },
@@ -57,35 +59,12 @@
     "name": "Beverly ville verte, Villa 99",
     "place": "Bouskoura",
     "service": "Aménagement paysager.",
-    "cover": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg",
-    "featured": [
-      "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg",
-      "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40.jpeg"
-    ],
+    "cover": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40.jpeg",
+    "featured": [],
     "media": [
       {
         "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.32.jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (1).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (2).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (3).jpeg"
-      },
-      {
-        "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (5).jpeg"
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40.jpeg"
       },
       {
         "type": "image",
@@ -93,7 +72,23 @@
       },
       {
         "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (2).jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (1).jpeg"
+      },
+      {
+        "type": "image",
         "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.32.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (3).jpeg"
       },
       {
         "type": "image",
@@ -104,16 +99,23 @@
         "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40 (2).jpeg"
       },
       {
-        "type": "image",
-        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.40.jpeg"
-      },
-      {
         "type": "video",
         "src": "assets/images/projets/projet2/WhatsApp Video 2026-11-09 at 11.02.32.mp4"
       },
       {
         "type": "video",
         "src": "assets/images/projets/projet2/WhatsApp Video 2026-11-09 at 11.02.38.mp4"
+      }
+    ],
+    "displayOrder": 3,
+    "excludedMedia": [
+      {
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (4).jpeg",
+        "reason": "Photo de gazon retirée de la galerie."
+      },
+      {
+        "src": "assets/images/projets/projet2/WhatsApp Image 2026-11-09 at 11.02.39 (5).jpeg",
+        "reason": "Photo de gazon retirée de la galerie."
       }
     ]
   },
@@ -124,7 +126,8 @@
     "service": "Aménagement paysager.",
     "cover": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (2).jpeg",
     "featured": [
-      "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (2).jpeg"
+      "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (2).jpeg",
+      "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (3).jpeg"
     ],
     "media": [
       {
@@ -133,17 +136,19 @@
       },
       {
         "type": "image",
-        "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (1).jpeg"
-      },
-      {
-        "type": "image",
         "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (3).jpeg"
       },
       {
         "type": "image",
         "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/projets/projet3/WhatsApp Image 2026-11-09 at 11.08.04 (1).jpeg"
       }
-    ]
+    ],
+    "displayOrder": 1,
+    "excludedMedia": []
   },
   {
     "id": "projet-4",
@@ -152,9 +157,7 @@
     "service": "Aménagement paysager.",
     "description": "Plantation de palmiers Washingtonia et Syagrus romanzoffiana.",
     "cover": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (3).jpeg",
-    "featured": [
-      "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (3).jpeg"
-    ],
+    "featured": [],
     "media": [
       {
         "type": "image",
@@ -166,7 +169,8 @@
       },
       {
         "type": "image",
-        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (2).jpeg"
+        "src": "assets/images/projets/projet4/WhatsApp Image 2026-11-09 at 11.12.50 (2).jpeg",
+        "caption": "Projection paysagère"
       },
       {
         "type": "image",
@@ -180,6 +184,8 @@
         "type": "video",
         "src": "assets/images/projets/projet4/WhatsApp Video 2026-11-09 at 11.17.19.mp4"
       }
-    ]
+    ],
+    "displayOrder": 4,
+    "excludedMedia": []
   }
 ]

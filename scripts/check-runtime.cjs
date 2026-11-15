@@ -68,7 +68,7 @@ async function main() {
     click(doc.querySelector('[data-info="privacy"]')); assert(doc.querySelector('#info-dialog').open);
     doc.querySelector('#info-dialog').close();
   }
-  for (const filename of ['devis.html', 'ar/devis.html']) {
+  for (const filename of ['devis.html', 'ar/devis.html', 'amenager-mon-jardin.html', 'ar/amenager-mon-jardin.html']) {
     const env = await environment(filename); const doc = env.document;
     const form = doc.querySelector('#quote-form'), input = doc.querySelector('input[type="file"]');
     doc.querySelector('[name="nom"]').value = 'Test client';

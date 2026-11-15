@@ -39,7 +39,13 @@ for (const [index, project] of projects.entries()) {
   const folder = `assets/images/projets/projet${index + 1}`;
   const expected = fs.readdirSync(folder).filter(file => /\.(jpe?g|png|webp|mp4)$/i.test(file)).map(file => `${folder}/${file}`).sort();
   const actual = project.media.map(item => item.src).sort();
-  if (JSON.stringify(actual) !== JSON.stringify(expected)) errors.push(`${project.id}: photos or videos missing/duplicated`);
+  const excluded = (project.excludedMedia || []).map(item => item.src);
+  const accounted = [...actual, ...excluded].sort();
+  if (JSON.stringify(accounted) !== JSON.stringify(expected)) errors.push(`${project.id}: photos or videos missing/duplicated`);
+  if (project.cover !== project.media[0].src) errors.push(`${project.id}: cover must be the first selected photo`);
+  for (const image of excluded) {
+    if (htmlByPage.get('realisations.html').includes(image) || htmlByPage.get('index.html').includes(image)) errors.push(`${project.id}: excluded lawn photo still visible`);
+  }
   for (const item of project.media) {
     if (!fs.existsSync(item.src)) errors.push(`${project.id}: missing media ${item.src}`);
     if (item.type !== (/\.mp4$/i.test(item.src) ? 'video' : 'image')) errors.push(`${project.id}: incorrect media type`);
@@ -47,7 +53,12 @@ for (const [index, project] of projects.entries()) {
   }
   for (const image of project.featured) {
     if (!actual.includes(image) || !htmlByPage.get('index.html').includes(image)) errors.push(`${project.id}: featured image missing`);
+    if (!htmlByPage.get('amenager-mon-jardin.html').includes(image)) errors.push(`${project.id}: landing page featured image missing`);
   }
+}
+for (const page of ['index.html', 'amenager-mon-jardin.html']) {
+  const html = htmlByPage.get(page);
+  if (/abeille-01|home-faq-number|home-faq-eyebrow|\{\{/.test(html)) errors.push(`${page}: obsolete content or unexpanded placeholder`);
 }
 if (/Croquis|galerie-grand-|Fairmont|Bombardier|Tramway/.test(htmlByPage.get('index.html') + htmlByPage.get('realisations.html'))) errors.push('Stale gallery or project content');
 const quote = htmlByPage.get('devis.html');
